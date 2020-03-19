@@ -13,7 +13,7 @@ public class ClickManager : MonoBehaviour
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // TODO: comprobar que funciona con VR, donde quizas no existe un "mousePosition"
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, distance_for_interactions, l_mask)) {
-			Debug.Log("You touch the cube");
+			Debug.Log("Sacas un ticket");
 		}
 	}
 
@@ -32,8 +32,8 @@ public class ClickManager : MonoBehaviour
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, distance_for_interactions, l_mask)) {
 			GameObject selected = hit.transform.gameObject;
-			selected.GetComponent<ChangeColor>().MakeSelected();
 			if (selected!=last_selected) {
+				selected.GetComponent<ChangeColor>().MakeSelected();
 				if (last_selected) last_selected.GetComponent<ChangeColor>().MakeUnselected();
 				last_selected=selected;
 			}

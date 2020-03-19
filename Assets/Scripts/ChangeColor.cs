@@ -5,21 +5,32 @@ using UnityEngine;
 public class ChangeColor : MonoBehaviour
 {
 
-	private Material unselected_material;
-	public Material selected_material;
+	public Shader standard_shader;
+	public Shader change_color_shader;
+
+	private void RecursiveChangeShader(GameObject go, Shader sh) {
+		//MeshRenderer mr = go.GetComponent<MeshRenderer>();
+		//if (mr) mr.material.shader=sh;
+		Transform[] allChildren = GetComponentsInChildren<Transform>();
+		foreach (Transform child in allChildren) {
+			//RecursiveChangeShader(child, sh);
+			MeshRenderer mr = child.gameObject.GetComponent<MeshRenderer>();
+			if (mr) mr.material.shader=sh;
+		}
+	}
 
 	public void MakeUnselected() {
-		GetComponent<MeshRenderer>().material=unselected_material;
+		RecursiveChangeShader(gameObject, standard_shader);
 	}
 
 	public void MakeSelected() {
-		GetComponent<MeshRenderer>().material=selected_material;
+		RecursiveChangeShader(gameObject, change_color_shader);
 	}
 
     // Start is called before the first frame update
     void Start()
     {
-		unselected_material = GetComponent<MeshRenderer>().material;
+
 	}
 
     // Update is called once per frame
