@@ -9,11 +9,8 @@ public class ChangeColor : MonoBehaviour
 	public Shader change_color_shader;
 
 	private void RecursiveChangeShader(GameObject go, Shader sh) {
-		//MeshRenderer mr = go.GetComponent<MeshRenderer>();
-		//if (mr) mr.material.shader=sh;
 		Transform[] allChildren = GetComponentsInChildren<Transform>();
 		foreach (Transform child in allChildren) {
-			//RecursiveChangeShader(child, sh);
 			MeshRenderer mr = child.gameObject.GetComponent<MeshRenderer>();
 			if (mr) mr.material.shader=sh;
 		}

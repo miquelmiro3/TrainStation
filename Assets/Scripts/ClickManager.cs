@@ -27,6 +27,7 @@ public class ClickManager : MonoBehaviour
 		Click();
 	}
 
+	// Checks if the user is watching an Interactuable object. If they are, call the object's MakeSelected() function. Also calls MakeUnselected() of the previous looked at object
 	private void CheckWhatWeWatch() {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // TODO: comprobar que funciona con VR, donde quizas no existe un "mousePosition"
 		RaycastHit hit;
