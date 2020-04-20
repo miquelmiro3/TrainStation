@@ -5,8 +5,6 @@ using UnityEngine;
 public class ChangeColor : MonoBehaviour
 {
 
-	// TODO: Cambiar para que cada hijo herede este script y se gestione a si mismo
-
 	private Material original_material;
 	public Material highlight_material;
 	private MeshRenderer mr;
@@ -50,7 +48,7 @@ public class ChangeColor : MonoBehaviour
 
 	public void UpdateHighlightMaterialTexture(Material hg) {
 		highlight_material=new Material(hg);
-		if (original_material) highlight_material.SetTexture("OriginalTex", original_material.GetTexture("_BaseMap"));
+		if (mr) highlight_material.SetTexture("OriginalTex", original_material.GetTexture("_BaseMap"));
 	}
 
     // Start is called before the first frame update
