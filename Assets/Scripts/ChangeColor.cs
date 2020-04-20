@@ -5,37 +5,62 @@ using UnityEngine;
 public class ChangeColor : MonoBehaviour
 {
 
-	public Shader standard_shader;
-	public Shader change_color_shader;
+	private Material original_material;
+	public Material highlight_material;
+	private MeshRenderer mr;
 
-	private void RecursiveChangeShader(GameObject go, Shader sh) {
-		//MeshRenderer mr = go.GetComponent<MeshRenderer>();
-		//if (mr) mr.material.shader=sh;
+	private void ChangeMaterial(Material mat) {
+		if (mr) mr.material=mat;
+	}
+
+	private void GiveScriptToAllChilds() {
 		Transform[] allChildren = GetComponentsInChildren<Transform>();
+		int i = 0;
 		foreach (Transform child in allChildren) {
-			//RecursiveChangeShader(child, sh);
-			MeshRenderer mr = child.gameObject.GetComponent<MeshRenderer>();
-			if (mr) mr.material.shader=sh;
+			if (i > 0) {
+				child.gameObject.AddComponent<ChangeColor>();
+			}
+			i++;
 		}
 	}
 
+	public void MakeUnselectedIndividual() {
+		ChangeMaterial(original_material);
+	}
+
 	public void MakeUnselected() {
-		RecursiveChangeShader(gameObject, standard_shader);
+		Transform[] allChildren = GetComponentsInChildren<Transform>();
+		foreach (Transform child in allChildren) {
+			child.gameObject.GetComponent<ChangeColor>().MakeUnselectedIndividual();
+		}
+	}
+
+	public void MakeSelectedIndividual() {
+		ChangeMaterial(highlight_material);
 	}
 
 	public void MakeSelected() {
-		RecursiveChangeShader(gameObject, change_color_shader);
+		Transform[] allChildren = GetComponentsInChildren<Transform>();
+		foreach (Transform child in allChildren) {
+			child.gameObject.GetComponent<ChangeColor>().MakeSelectedIndividual();
+		}
+	}
+
+	public void UpdateHighlightMaterialTexture(Material hg) {
+		highlight_material=new Material(hg);
+		if (mr) highlight_material.SetTexture("OriginalTex", original_material.GetTexture("_BaseMap"));
 	}
 
     // Start is called before the first frame update
     void Start()
     {
-
+		GiveScriptToAllChilds();
+		mr = GetComponent<MeshRenderer>();
+		if (mr) original_material=mr.material;
+		if (transform.parent!=null) {
+			UpdateHighlightMaterialTexture(transform.parent.gameObject.GetComponent<ChangeColor>().highlight_material);
+		} else {
+			UpdateHighlightMaterialTexture(highlight_material);
+		}
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-		
-    }
 }

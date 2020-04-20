@@ -9,8 +9,9 @@ public class ClickManager : MonoBehaviour
 	private LayerMask l_mask;
 	private GameObject last_selected;
 
+	// Function that's called whenever the user clicks
 	public void Click() {
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // TODO: comprobar que funciona con VR, donde quizas no existe un "mousePosition"
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // TODO: comprobar que funciona con VR, donde quizas no existe un "mousePosition". Cambiar por Interactable.
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, distance_for_interactions, l_mask)) {
 			Debug.Log("Sacas un ticket");
@@ -27,6 +28,7 @@ public class ClickManager : MonoBehaviour
 		Click();
 	}
 
+	// Checks if the user is watching an Interactuable object. If they are, call the object's MakeSelected() function. Also calls MakeUnselected() of the previous looked at object
 	private void CheckWhatWeWatch() {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // TODO: comprobar que funciona con VR, donde quizas no existe un "mousePosition"
 		RaycastHit hit;
