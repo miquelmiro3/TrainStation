@@ -21,7 +21,6 @@ public class ChangeColor : MonoBehaviour
 		foreach (Transform child in allChildren) {
 			if (i > 0) {
 				child.gameObject.AddComponent<ChangeColor>();
-				child.gameObject.GetComponent<ChangeColor>().highlight_material=highlight_material;
 			}
 			i++;
 		}
@@ -49,11 +48,21 @@ public class ChangeColor : MonoBehaviour
 		}
 	}
 
+	public void UpdateHighlightMaterialTexture(Material hg) {
+		highlight_material=new Material(hg);
+		if (original_material) highlight_material.SetTexture("OriginalTex", original_material.GetTexture("_BaseMap"));
+	}
+
     // Start is called before the first frame update
     void Start()
     {
 		GiveScriptToAllChilds();
 		mr = GetComponent<MeshRenderer>();
 		if (mr) original_material=mr.material;
+		if (transform.parent!=null) {
+			UpdateHighlightMaterialTexture(transform.parent.gameObject.GetComponent<ChangeColor>().highlight_material);
+		} else {
+			UpdateHighlightMaterialTexture(highlight_material);
+		}
 	}
 }
