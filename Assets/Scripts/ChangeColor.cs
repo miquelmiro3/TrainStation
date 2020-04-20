@@ -5,34 +5,55 @@ using UnityEngine;
 public class ChangeColor : MonoBehaviour
 {
 
-	public Shader standard_shader;
-	public Shader change_color_shader;
+	// TODO: Cambiar para que cada hijo herede este script y se gestione a si mismo
 
-	private void RecursiveChangeShader(GameObject go, Shader sh) {
+	private Material original_material;
+	public Material highlight_material;
+	private MeshRenderer mr;
+
+	private void ChangeMaterial(Material mat) {
+		if (mr) mr.material=mat;
+	}
+
+	private void GiveScriptToAllChilds() {
 		Transform[] allChildren = GetComponentsInChildren<Transform>();
+		int i = 0;
 		foreach (Transform child in allChildren) {
-			MeshRenderer mr = child.gameObject.GetComponent<MeshRenderer>();
-			if (mr) mr.material.shader=sh;
+			if (i > 0) {
+				child.gameObject.AddComponent<ChangeColor>();
+				child.gameObject.GetComponent<ChangeColor>().highlight_material=highlight_material;
+			}
+			i++;
 		}
 	}
 
+	public void MakeUnselectedIndividual() {
+		ChangeMaterial(original_material);
+	}
+
 	public void MakeUnselected() {
-		RecursiveChangeShader(gameObject, standard_shader);
+		Transform[] allChildren = GetComponentsInChildren<Transform>();
+		foreach (Transform child in allChildren) {
+			child.gameObject.GetComponent<ChangeColor>().MakeUnselectedIndividual();
+		}
+	}
+
+	public void MakeSelectedIndividual() {
+		ChangeMaterial(highlight_material);
 	}
 
 	public void MakeSelected() {
-		RecursiveChangeShader(gameObject, change_color_shader);
+		Transform[] allChildren = GetComponentsInChildren<Transform>();
+		foreach (Transform child in allChildren) {
+			child.gameObject.GetComponent<ChangeColor>().MakeSelectedIndividual();
+		}
 	}
 
     // Start is called before the first frame update
     void Start()
     {
-
+		GiveScriptToAllChilds();
+		mr = GetComponent<MeshRenderer>();
+		if (mr) original_material=mr.material;
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-		
-    }
 }
