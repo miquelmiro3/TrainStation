@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeColor : MonoBehaviour
+public class Interactuable : MonoBehaviour
 {
 
 	private Material original_material;
@@ -18,7 +18,7 @@ public class ChangeColor : MonoBehaviour
 		int i = 0;
 		foreach (Transform child in allChildren) {
 			if (i > 0) {
-				child.gameObject.AddComponent<ChangeColor>();
+				child.gameObject.AddComponent<Interactuable>();
 			}
 			i++;
 		}
@@ -31,7 +31,7 @@ public class ChangeColor : MonoBehaviour
 	public void MakeUnselected() {
 		Transform[] allChildren = GetComponentsInChildren<Transform>();
 		foreach (Transform child in allChildren) {
-			child.gameObject.GetComponent<ChangeColor>().MakeUnselectedIndividual();
+			child.gameObject.GetComponent<Interactuable>().MakeUnselectedIndividual();
 		}
 	}
 
@@ -42,7 +42,7 @@ public class ChangeColor : MonoBehaviour
 	public void MakeSelected() {
 		Transform[] allChildren = GetComponentsInChildren<Transform>();
 		foreach (Transform child in allChildren) {
-			child.gameObject.GetComponent<ChangeColor>().MakeSelectedIndividual();
+			child.gameObject.GetComponent<Interactuable>().MakeSelectedIndividual();
 		}
 	}
 
@@ -51,14 +51,22 @@ public class ChangeColor : MonoBehaviour
 		if (mr) highlight_material.SetTexture("OriginalTex", original_material.GetTexture("_BaseMap"));
 	}
 
+	public void MakeUninteractuable() {
+		gameObject.layer=0;
+	}
+
+	public virtual void Interact() {
+		Debug.Log("Error: Interactuable object without Interact() behaviour");
+	}
+
     // Start is called before the first frame update
     void Start()
     {
 		GiveScriptToAllChilds();
 		mr = GetComponent<MeshRenderer>();
 		if (mr) original_material=mr.material;
-		if (transform.parent!=null) {
-			UpdateHighlightMaterialTexture(transform.parent.gameObject.GetComponent<ChangeColor>().highlight_material);
+		if (transform.parent!=null && highlight_material==null) {
+			UpdateHighlightMaterialTexture(transform.parent.gameObject.GetComponent<Interactuable>().highlight_material);
 		} else {
 			UpdateHighlightMaterialTexture(highlight_material);
 		}

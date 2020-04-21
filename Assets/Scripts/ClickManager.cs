@@ -9,23 +9,13 @@ public class ClickManager : MonoBehaviour
 	private LayerMask l_mask;
 	private GameObject last_selected;
 
-	// Function that's called whenever the user clicks
-	public void Click() {
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // TODO: comprobar que funciona con VR, donde quizas no existe un "mousePosition". Cambiar por Interactable.
-		RaycastHit hit;
-		if (Physics.Raycast(ray, out hit, distance_for_interactions, l_mask)) {
-			Debug.Log("Sacas un ticket");
-		}
-	}
-
 	public void LeftClick() {
 		Debug.Log("LeftClick");
-		Click();
+		if (last_selected) last_selected.GetComponent<Interactuable>().Interact();
 	}
 
 	public void RightClick() {
 		Debug.Log("RightClick");
-		Click();
 	}
 
 	// Checks if the user is watching an Interactuable object. If they are, call the object's MakeSelected() function. Also calls MakeUnselected() of the previous looked at object
@@ -35,12 +25,12 @@ public class ClickManager : MonoBehaviour
 		if (Physics.Raycast(ray, out hit, distance_for_interactions, l_mask)) {
 			GameObject selected = hit.transform.gameObject;
 			if (selected!=last_selected) {
-				selected.GetComponent<ChangeColor>().MakeSelected();
-				if (last_selected) last_selected.GetComponent<ChangeColor>().MakeUnselected();
+				selected.GetComponent<Interactuable>().MakeSelected();
+				if (last_selected) last_selected.GetComponent<Interactuable>().MakeUnselected();
 				last_selected=selected;
 			}
 		} else if (last_selected) {
-			last_selected.GetComponent<ChangeColor>().MakeUnselected();
+			last_selected.GetComponent<Interactuable>().MakeUnselected();
 			last_selected=null;
 		}
 	}
