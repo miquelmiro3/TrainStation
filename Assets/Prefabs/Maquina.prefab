@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2975604244234793357}
   - component: {fileID: 4541997523211733519}
+  - component: {fileID: 7571934554119662610}
   - component: {fileID: 4375624000261383636}
   m_Layer: 8
   m_Name: Maquina
@@ -281,6 +282,19 @@ BoxCollider:
   m_GameObject: {fileID: 2975604244234793354}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3268175, y: 1.1697441, z: 1.9619801}
+  m_Center: {x: -0.011583805, y: 0.013990462, z: -0.0041542053}
+--- !u!65 &7571934554119662610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975604244234793354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.3268175, y: 1.1697441, z: 1.9619801}
