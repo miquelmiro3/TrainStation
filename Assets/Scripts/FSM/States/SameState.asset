@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SameState
   m_EditorClassIdentifier: 
   stateId: 0
-  stayState: {fileID: 11400000}
+  stayState: {fileID: 0}
   onEnterActions: []
   constantActions: []
   transitions: []

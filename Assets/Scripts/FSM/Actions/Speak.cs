@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New ActionSpeak", menuName = "FSM/Action/Speak")]
-public class Speak : Action
+public class Speak : FSMaction
 {
 	public string message;
 

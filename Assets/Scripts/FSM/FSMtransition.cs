@@ -4,8 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "New Transition", menuName = "FSM/Transition")]
-public class Transition : ScriptableObject
+public class FSMtransition : ScriptableObject
 {
 	public Decision decision;
-	public State destinationState;
+	public FSMstate destinationState;
 }
