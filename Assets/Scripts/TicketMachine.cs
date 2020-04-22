@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TicketMachine : Interactuable
 {
+	public GameObject ticket;
+
 	public override void Interact() {
-		Debug.Log("You get a ticket");
+		Debug.Log("Giving a ticket");
+		MakeUninteractuable();
+		Instantiate(ticket, transform, false);
 	}
 }
