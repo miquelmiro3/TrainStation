@@ -55,6 +55,10 @@ public class Interactuable : MonoBehaviour
 		gameObject.layer=0;
 	}
 
+	public void MakeInteractuable() {
+		gameObject.layer=LayerMask.NameToLayer("Interactuable");
+	}
+
 	public virtual void Interact() {
 		Debug.Log("Error: Interactuable object without Interact() behaviour");
 	}

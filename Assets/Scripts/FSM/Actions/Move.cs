@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New ActionSpeak", menuName = "FSM/Action/Move")]
-public class Move : Action
+public class Move : FSMaction
 {
 	public float speed;
 

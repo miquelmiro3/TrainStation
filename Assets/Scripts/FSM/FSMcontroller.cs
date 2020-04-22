@@ -5,7 +5,7 @@ using UnityEngine;
 public class FSMcontroller : MonoBehaviour
 {
 	// The current State in the FSM. The initial value indicates the initial state.
-	public State activeState;
+	public FSMstate activeState;
 
 	private bool alarm_on;
 
@@ -32,7 +32,7 @@ public class FSMcontroller : MonoBehaviour
 
 	private void Update() {
 		activeState.PerformConstantActions(this);
-		State state = activeState.CheckTransitions(this);
+		FSMstate state = activeState.CheckTransitions(this);
 		if (state.stateId!=0) {
 			activeState=state;
 			activeState.OnEnterState(this);
