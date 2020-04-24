@@ -246,8 +246,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975604244234793357}
-  - component: {fileID: 8638380428456153133}
   - component: {fileID: 4541997523211733519}
+  - component: {fileID: 7571934554119662610}
+  - component: {fileID: 4375624000261383636}
   m_Layer: 8
   m_Name: Maquina
   m_TagString: Untagged
@@ -272,20 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8638380428456153133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2975604244234793354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95db2cf6b574eb64aa5481c6b2dd4916, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standard_shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  change_color_shader: {fileID: 4800000, guid: d8071734c25466e4388304a1f2ab2aaa, type: 3}
 --- !u!65 &4541997523211733519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -299,3 +286,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3268175, y: 1.1697441, z: 1.9619801}
   m_Center: {x: -0.011583805, y: 0.013990462, z: -0.0041542053}
+--- !u!65 &7571934554119662610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975604244234793354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3268175, y: 1.1697441, z: 1.9619801}
+  m_Center: {x: -0.011583805, y: 0.013990462, z: -0.0041542053}
+--- !u!114 &4375624000261383636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975604244234793354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbf7c36d5ea0d54d90b115bb1d025b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlight_material: {fileID: 2100000, guid: cb3ace375aea93349890113a3a746e56, type: 2}
+  ticket: {fileID: 248928563599443160, guid: f41d93a4c360a744c827f32653ede6a1, type: 3}
