@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5a45ee5b516414e8a9ef120d0d0be0, type: 3}
-  m_Name: SpacePressed
+  m_Script: {fileID: 11500000, guid: b414d63a905ba254fa5043935afd7143, type: 3}
+  m_Name: TicketMachineIdle
   m_EditorClassIdentifier: 
-  key: space
+  stateId: 1
+  stayState: {fileID: 11400000, guid: 727d0bc6ab9e6f347b60b6ddbcc34e50, type: 2}
+  onEnterActions: []
+  constantActions: []
+  transitions: []
