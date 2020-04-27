@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee63e085e2be2e4dadb32e61097b764, type: 3}
-  m_Name: FastMove
+  m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
+  m_Name: WaitForTicket
   m_EditorClassIdentifier: 
-  condition: {fileID: 11400000, guid: 148bb2c1ee0ed684da2d48c7adc6b405, type: 2}
-  speed: 2
-  distance: 0
+  decision: {fileID: 11400000, guid: 5eba327eee66bdc439a1f3919ff63328, type: 2}
+  destinationState: {fileID: 11400000, guid: bcf7577b7a7af294286381929d1b6630, type: 2}

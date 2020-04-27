@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomEvent : MonoBehaviour
+public class CustomEvent
 {
 	public event System.Action eventTrigger;
 
-	public void OnEventTrigger() {
+	// Call this function to activate the eventTrigger alarm, triggering all the suscribed functions
+	public void ActivateEventTrigger() {
 		if (eventTrigger!=null) eventTrigger();
 	}
 }

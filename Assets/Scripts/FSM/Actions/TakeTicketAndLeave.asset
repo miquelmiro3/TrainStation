@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
-  m_Name: GiveTicket
+  m_Script: {fileID: 11500000, guid: 76f8cdc80c6426a42b1da261af613d7b, type: 3}
+  m_Name: TakeTicketAndLeave
   m_EditorClassIdentifier: 
-  decision: {fileID: 0}
-  destinationState: {fileID: 0}
+  condition: {fileID: 0}
+  distance: 2

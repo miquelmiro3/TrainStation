@@ -166,4 +166,12 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1
+    functionName: TicketReady
+    data: 
+    objectReferenceParameter: {fileID: 248928563599443160, guid: f41d93a4c360a744c827f32653ede6a1,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

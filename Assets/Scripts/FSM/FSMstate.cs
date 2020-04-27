@@ -6,9 +6,9 @@ using UnityEngine;
 public class FSMstate : ScriptableObject
 {
 	[Header ("Variables")]
-	// The id of the state. It's important that the id 0 is used for the stayState.
-	public int stateId;
-	// The state with id 0, to indicate the controller that there's no transitions to be made.
+	// Indicates if this state is the StayState. 
+	public bool isStayState;
+	// The state with isStayState==true, to indicate the controller that there's no transitions to be made.
 	public FSMstate stayState;
 
 	[Header ("Actions")]

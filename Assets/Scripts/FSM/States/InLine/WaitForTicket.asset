@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b414d63a905ba254fa5043935afd7143, type: 3}
-  m_Name: SameState
+  m_Name: WaitForTicket
   m_EditorClassIdentifier: 
-  isStayState: 1
-  stayState: {fileID: 11400000}
+  isStayState: 0
+  stayState: {fileID: 11400000, guid: 727d0bc6ab9e6f347b60b6ddbcc34e50, type: 2}
   onEnterActions: []
   constantActions: []
-  transitions: []
+  transitions:
+  - {fileID: 11400000, guid: ab70cf3da53c15842adaaaee8fcccf58, type: 2}
