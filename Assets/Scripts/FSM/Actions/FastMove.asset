@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: FastMove
   m_EditorClassIdentifier: 
   condition: {fileID: 11400000, guid: 148bb2c1ee0ed684da2d48c7adc6b405, type: 2}
-  speed: 0.25
+  speed: 2
+  distance: 0

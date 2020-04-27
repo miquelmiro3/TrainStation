@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b414d63a905ba254fa5043935afd7143, type: 3}
   m_Name: SameState
   m_EditorClassIdentifier: 
-  stateId: 0
+  isStayState: 1
   stayState: {fileID: 11400000}
   onEnterActions: []
   constantActions: []
