@@ -52,7 +52,7 @@ public class Interactuable : MonoBehaviour
 	}
 
 	public void MakeUninteractuable() {
-		gameObject.layer=0;
+		gameObject.layer=LayerMask.NameToLayer("Interactuable2");
 	}
 
 	public void MakeInteractuable() {
@@ -74,5 +74,9 @@ public class Interactuable : MonoBehaviour
 		} else {
 			UpdateHighlightMaterialTexture(highlight_material);
 		}
+	}
+
+	protected virtual void Update() {
+
 	}
 }

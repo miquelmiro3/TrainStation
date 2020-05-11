@@ -10,7 +10,6 @@ public class ClickManager : MonoBehaviour
 	private GameObject last_selected;
 
 	public void LeftClick() {
-		Debug.Log("LeftClick");
 		if (last_selected) last_selected.GetComponent<Interactuable>().Interact();
 	}
 

@@ -11,7 +11,7 @@ public class Move : FSMaction
 	public override void Act(FSMcontroller controller) {
 		RaycastHit hit;
 		Debug.DrawRay(controller.transform.position, controller.transform.TransformDirection(Vector3.forward)*distance, Color.yellow);
-		if (!Physics.Raycast(controller.transform.position, controller.transform.TransformDirection(Vector3.forward), out hit, distance, LayerMask.GetMask("Interactuable", "Person"))) {
+		if (!Physics.Raycast(controller.transform.position, controller.transform.TransformDirection(Vector3.forward), out hit, distance, LayerMask.GetMask("Interactuable", "Person", "Player", "Interactuable2"))) {
 			controller.transform.Translate(new Vector3(0, 0, speed*Time.deltaTime));
 		} else {
 			if (hit.transform.gameObject.layer==LayerMask.NameToLayer("Interactuable")) {
