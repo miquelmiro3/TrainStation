@@ -7,7 +7,7 @@ public class TimerWait : StateMachineBehaviour
 	private float timer;
 
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		timer=Random.Range(0.0f, 4.0f);
+		timer=Random.Range(0.0f, 7.0f);
 	}
 
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
