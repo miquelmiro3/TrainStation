@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4126988561466303239, guid: 7aac9768e2e879b439e7c0d94182cb44, type: 3}
+  - {fileID: 2100000, guid: 9252d29d863e293419be166db5f10402, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -313,3 +313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight_material: {fileID: 2100000, guid: cb3ace375aea93349890113a3a746e56, type: 2}
   ticket: {fileID: 248928563599443160, guid: f41d93a4c360a744c827f32653ede6a1, type: 3}
+  printing: 0
+  lastTicket: {fileID: 0}
+  distanceForPersonInLine: 0
