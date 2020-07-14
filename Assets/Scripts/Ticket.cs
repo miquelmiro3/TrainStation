@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ticket : Interactuable
+public class Ticket : Interactuable, IInteractable
 {
 	public bool isReady;
 	// Variable used to indicate a time value to destroy the ticket, to avoid people getting stuck in lines because of the player's actions
 	private float timeToDestroy;
 
-	public override void Interact() {
+	public void Interact() {
 		Debug.Log("You get a ticket");
 		transform.parent.gameObject.GetComponent<TicketMachine>().DelayedMakeInteractuable(0.5f);
 		Destroy(gameObject);
