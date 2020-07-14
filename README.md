@@ -1,6 +1,6 @@
 # Train Station
 
-Repositorio con el proyecto Unity de Train Station. La versión de Unity utilizada es la 2019.3.
+Repositorio con el proyecto Unity de Train Station. La versión de Unity utilizada es la 2019.3.0f6
 
 ## Trabajar con git
 
