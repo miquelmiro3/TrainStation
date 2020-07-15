@@ -11,7 +11,7 @@ public class ClickManager : MonoBehaviour
 	public GameObject last_selected;
 
 	public void LeftClick() {
-		if (instance.last_selected) instance.last_selected.GetComponent<Interactuable>().Interact();
+		if (instance.last_selected) instance.last_selected.GetComponent<IInteractable>().Interact();
 	}
 
 	public void RightClick() {

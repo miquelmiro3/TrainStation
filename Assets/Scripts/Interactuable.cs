@@ -66,10 +66,6 @@ public class Interactuable : MonoBehaviour
 		timer=time;
 	}
 
-	public virtual void Interact() {
-		Debug.Log("Error: Interactuable object without Interact() behaviour");
-	}
-
     // Start is called before the first frame update
     protected virtual void Start()
     {

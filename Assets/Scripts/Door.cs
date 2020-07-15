@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
-public class Door : Interactuable {
+[RequireComponent(typeof(UnityEngine.XR.Interaction.Toolkit.XRSimpleInteractable))]
+public class Door : Interactuable, IInteractable {
 
-	public override void Interact() {
+	public void Interact() {
 		GetComponent<Animator>().SetTrigger("Open");
 		GetComponent<BoxCollider>().enabled=false;
 		MakeUninteractuable();

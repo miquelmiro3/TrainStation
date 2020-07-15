@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TicketMachine : Interactuable
+public class TicketMachine : Interactuable, IInteractable
 {
 	public GameObject ticket;
 	public CustomEvent ticketPrinted;
@@ -30,7 +30,7 @@ public class TicketMachine : Interactuable
 		}
 	}
 
-	public override void Interact() {
+	public void Interact() {
 		if (machineInUse) Debug.Log("It's not your turn");
 		else {
 			if (!printing) {
