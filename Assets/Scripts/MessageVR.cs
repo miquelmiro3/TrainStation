@@ -17,7 +17,7 @@ public class MessageVR : MonoBehaviour
 		t.text=message;
 		timer=time;
 		foreach (Transform child in transform) {
-			child.gameObject.active=true;
+			child.gameObject.SetActive(true);
 		}
 		printing=true;
 	}
@@ -38,7 +38,7 @@ public class MessageVR : MonoBehaviour
 			if (timer<=0) {
 				printing=false;
 				foreach (Transform child in transform) {
-					child.gameObject.active=false;
+					child.gameObject.SetActive(false);
 				}
 			}
 		}

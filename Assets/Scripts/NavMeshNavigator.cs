@@ -25,10 +25,12 @@ public class NavMeshNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (destroyWhenOnDestination && agent.remainingDistance<=0.4) Destroy(gameObject);
-		else if (agent.remainingDistance<=0.2) {
-			Vector3 destination = targets.GetRandomPoint();
-			agent.SetDestination(destination);
+		if (!agent.pathPending) {
+			if (destroyWhenOnDestination&&agent.remainingDistance<=0.4) Destroy(gameObject);
+			else if (agent.remainingDistance<=0.2) {
+				Vector3 destination = targets.GetRandomPoint();
+				agent.SetDestination(destination);
+			}
 		}
     }
 }
