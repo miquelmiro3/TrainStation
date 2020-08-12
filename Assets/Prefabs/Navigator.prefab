@@ -2254,6 +2254,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: {fileID: 0}
+  destroyWhenOnDestination: 0
+  timeToConsiderStuck: 0.5
+  stuckDistance: 0.2
 --- !u!195 &2112294035563598809
 NavMeshAgent:
   m_ObjectHideFlags: 0
