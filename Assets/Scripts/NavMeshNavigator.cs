@@ -15,6 +15,10 @@ public class NavMeshNavigator : MonoBehaviour
 		agent.SetDestination(dest);
 	}
 
+	public void SetSpeed(float speed) {
+		agent.speed=speed;
+	}
+
     // Start is called before the first frame update
     void Start()
     {
