@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0894337e9fb1211418d8b0eac3e224d3, type: 3}
-  m_Name: New ChangeAnimationSpeed
+  m_Name: AnimSpeed 0_8-1
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  animSpeedMin: 0
-  animSpeedMax: 0
+  animSpeedMin: 0.7
+  animSpeedMax: 1

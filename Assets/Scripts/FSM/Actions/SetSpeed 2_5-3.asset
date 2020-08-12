@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4418459c75b4a4469e1b4088b780f01, type: 3}
-  m_Name: SetSpeed3
+  m_Name: SetSpeed 2_5-3
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  speed: 0
+  speedMin: 2.5
+  speedMax: 3
