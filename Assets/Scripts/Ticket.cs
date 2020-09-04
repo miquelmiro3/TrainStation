@@ -10,6 +10,7 @@ public class Ticket : Interactuable, IInteractable
 
 	public void Interact() {
 		Debug.Log("You get a ticket");
+		TaskHandler.instance.taskDone=true;
 		transform.parent.gameObject.GetComponent<TicketMachine>().DelayedMakeInteractuable(0.5f);
 		Destroy(gameObject);
 	}
