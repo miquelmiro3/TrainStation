@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStayState: 0
   stayState: {fileID: 11400000, guid: 727d0bc6ab9e6f347b60b6ddbcc34e50, type: 2}
-  onEnterActions:
-  - {fileID: 11400000, guid: b65e6255b2bf1354d9a42da65b2baff5, type: 2}
+  onEnterActions: []
   constantActions: []
   transitions:
   - {fileID: 11400000, guid: 4f3af75e49aa167479d624f959cc5f1c, type: 2}
