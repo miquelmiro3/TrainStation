@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4734265924398712768}
   - component: {fileID: 3753873568024167995}
   - component: {fileID: 6001072383186153895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Can_down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6249307178447912462}
   - component: {fileID: 2136558367336210365}
   - component: {fileID: 5127379479726228829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Can_up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 8188926132831050147}
   - component: {fileID: -5768093955987477330}
   - component: {fileID: -5858818111097335693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,15 +188,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7879868554579800897}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -39.492, y: 0.456, z: -5.34}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 6249307178447912462}
   - {fileID: 4734265924398712768}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8407376740591014070
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -252,12 +252,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7879868554579800897}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2.8192704
+  m_Radius: 1.1337756
+  m_Height: 3.1995056
   m_Direction: 1
-  m_Center: {x: 0.000000074505806, y: -0.014898329, z: -0.0000000745058}
+  m_Center: {x: 0.000000074505806, y: -0.13063923, z: -0.07479325}
 --- !u!114 &7530542122035324933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ Animator:
   m_GameObject: {fileID: 7879868554579800897}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f52192be0382fe54892c35539c99d6ec, type: 2}
+  m_Controller: {fileID: 9100000, guid: 17655b5f6dfa5774d83af564a6404ad4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -335,8 +335,7 @@ MonoBehaviour:
         m_MethodName: SelectObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 248928563599443160, guid: f41d93a4c360a744c827f32653ede6a1,
-            type: 3}
+          m_ObjectArgument: {fileID: 7879868554579800897}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
