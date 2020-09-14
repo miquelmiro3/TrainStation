@@ -349,11 +349,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7875738692267718271, guid: 1dc315370562917458e51a920528921d,
         type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 693879826}
-    - target: {fileID: 7875738692267718271, guid: 1dc315370562917458e51a920528921d,
-        type: 3}
       propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 956495450}
@@ -13588,18 +13583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeState: {fileID: 11400000, guid: 2b98a02c502f903468ea2ec4039d8c85, type: 2}
---- !u!114 &693879826 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4507084711537307650, guid: 0b0f526d6e9a5b94d8a84ef1f423910d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1245624225}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &694423783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7958297243144961633, guid: e5fbfbc62493d50448a888f1e0f80703,
@@ -24562,6 +24545,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1422262174804257273, guid: 59170a3ff368182488bd96f8e01b3ffb,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 956495450}
+    - target: {fileID: 1422262174804257273, guid: 59170a3ff368182488bd96f8e01b3ffb,
+        type: 3}
+      propertyPath: m_OnHoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 956495450}
     - target: {fileID: 2975604244234793354, guid: 59170a3ff368182488bd96f8e01b3ffb,
         type: 3}
       propertyPath: m_Name
@@ -24820,76 +24813,6 @@ Transform:
   m_Father: {fileID: 1223748563}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1553418580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2975604244234793354, guid: 59170a3ff368182488bd96f8e01b3ffb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1537981083}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1553418581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553418580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 693879826}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_OnFirstHoverEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 956495450}
-        m_MethodName: SelectObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1553418580}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 956495450}
-        m_MethodName: UnselectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnLastHoverExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExit:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CustomReticle: {fileID: 0}
 --- !u!1 &1556709485
 GameObject:
   m_ObjectHideFlags: 0
