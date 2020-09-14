@@ -12,7 +12,7 @@ public class TakeTicketAndLeave : FSMaction
 		if (Physics.Raycast(controller.transform.position, controller.transform.TransformDirection(Vector3.forward), out hit, distance, LayerMask.GetMask("Interactuable"))) {
 			TicketMachine tm = hit.transform.gameObject.GetComponent<TicketMachine>();
 			if (tm && tm.lastTicket) {
-				if (tm.lastTicket.GetComponent<Ticket>().isReady) {
+				if (tm.lastTicket.GetComponent<Collectable>().isReady) {
 					// TODO: when there's animations in place, make it so it's destroyed at the end of picking up the ticket, and then leave
 					Destroy(tm.lastTicket);
 					Destroy(controller.gameObject);
