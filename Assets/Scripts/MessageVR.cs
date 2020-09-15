@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class MessageVR : MonoBehaviour
 {
-
+	public static MessageVR instance;
 	public float time;
 	private float timer;
 	public string message;
 	public bool printing;
 	private Text t;
+
+	public static void PrintMessage(string m) {
+		MessageVR.instance.ShowMessage(m);
+	}
 
 	public void ShowMessage(string m) {
 		message=m;
@@ -25,6 +29,8 @@ public class MessageVR : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		if (MessageVR.instance) Destroy(this);
+		MessageVR.instance=this;
 		t=GetComponentInChildren<Text>();
 		timer=time;
 		printing=true;

@@ -25543,7 +25543,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Busca una\nm\xE1quina de\ntickets y\ncompra uno."
 --- !u!222 &1612275216
