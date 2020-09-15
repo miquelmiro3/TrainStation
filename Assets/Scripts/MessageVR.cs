@@ -32,7 +32,7 @@ public class MessageVR : MonoBehaviour
 		if (MessageVR.instance) Destroy(this);
 		MessageVR.instance=this;
 		t=GetComponentInChildren<Text>();
-		timer=time;
+		timer=0;
 		printing=true;
     }
 
