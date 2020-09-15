@@ -241,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &18981016
 Animator:
   serializedVersion: 3
@@ -2134,6 +2135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &57310081
 Animator:
   serializedVersion: 3
@@ -2543,6 +2545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &80714844
 Animator:
   serializedVersion: 3
@@ -2617,6 +2620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &81578081
 Animator:
   serializedVersion: 3
@@ -3538,6 +3542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &94346936
 Animator:
   serializedVersion: 3
@@ -3879,6 +3884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &133174617
 Animator:
   serializedVersion: 3
@@ -3973,6 +3979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &165855149
 Animator:
   serializedVersion: 3
@@ -4805,6 +4812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &233884829
 Animator:
   serializedVersion: 3
@@ -6043,6 +6051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &333751864
 Animator:
   serializedVersion: 3
@@ -6381,6 +6390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &360045160
 Animator:
   serializedVersion: 3
@@ -6455,6 +6465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &367530380
 Animator:
   serializedVersion: 3
@@ -6529,6 +6540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &381694541
 Animator:
   serializedVersion: 3
@@ -6603,6 +6615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &391390017
 Animator:
   serializedVersion: 3
@@ -6707,6 +6720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &403942583
 Animator:
   serializedVersion: 3
@@ -6781,6 +6795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &409156203
 Animator:
   serializedVersion: 3
@@ -7407,6 +7422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &458269861
 Animator:
   serializedVersion: 3
@@ -7666,6 +7682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &469296815
 Animator:
   serializedVersion: 3
@@ -7740,6 +7757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &469511518
 Animator:
   serializedVersion: 3
@@ -7899,11 +7917,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 492937226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ddec3aee3241b4c88f5f91c1d12a01, type: 3}
+  m_Script: {fileID: 11500000, guid: 01ff0f9bc39818640b6ec74874409457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 174938337}
-  destroyWhenOnDestination: 0
+  activeState: {fileID: 11400000, guid: a858716e97a39fe4f84a115c3cf72656, type: 2}
 --- !u!95 &492937228
 Animator:
   serializedVersion: 3
@@ -7914,7 +7931,7 @@ Animator:
   m_GameObject: {fileID: 492937226}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b104d764f75142419182a270a645509, type: 2}
+  m_Controller: {fileID: 9100000, guid: 308cb8673830ee14b9607582631091a5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7923,7 +7940,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &492937229
+--- !u!114 &492937229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492937226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ddec3aee3241b4c88f5f91c1d12a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: {fileID: 0}
+  destroyWhenOnDestination: 0
+  idle: 1
+--- !u!195 &492937230
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7945,19 +7977,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &492937230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492937226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ff0f9bc39818640b6ec74874409457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeState: {fileID: 11400000, guid: 2b98a02c502f903468ea2ec4039d8c85, type: 2}
 --- !u!1 &497335899
 GameObject:
   m_ObjectHideFlags: 0
@@ -8048,6 +8067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &500613288
 Animator:
   serializedVersion: 3
@@ -9051,6 +9071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &558654145
 Animator:
   serializedVersion: 3
@@ -9203,7 +9224,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 446900662}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &589309077
+--- !u!64 &589309080
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9529,6 +9550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &603691856
 Animator:
   serializedVersion: 3
@@ -9835,6 +9857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &633291248
 Animator:
   serializedVersion: 3
@@ -10024,6 +10047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &646660804
 Animator:
   serializedVersion: 3
@@ -10394,6 +10418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &660638997
 Animator:
   serializedVersion: 3
@@ -14097,6 +14122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &672258697
 Animator:
   serializedVersion: 3
@@ -14171,6 +14197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &673406191
 Animator:
   serializedVersion: 3
@@ -14245,6 +14272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &675125145
 Animator:
   serializedVersion: 3
@@ -14319,6 +14347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &675943943
 Animator:
   serializedVersion: 3
@@ -14546,7 +14575,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.03
+      value: -61.102
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
@@ -14556,27 +14585,27 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.78
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
@@ -14591,7 +14620,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f700980ba4ec4c442985fa78be4e50a9,
         type: 3}
@@ -14646,6 +14675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &690957433
 Animator:
   serializedVersion: 3
@@ -14837,6 +14867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &702028016
 Animator:
   serializedVersion: 3
@@ -14911,6 +14942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &704428442
 Animator:
   serializedVersion: 3
@@ -15476,6 +15508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &726341316
 Animator:
   serializedVersion: 3
@@ -15550,6 +15583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &728716486
 Animator:
   serializedVersion: 3
@@ -16632,6 +16666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &825289292
 Animator:
   serializedVersion: 3
@@ -16706,6 +16741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &836500215
 Animator:
   serializedVersion: 3
@@ -16859,6 +16895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &851233831
 Animator:
   serializedVersion: 3
@@ -17289,6 +17326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &876623026
 Animator:
   serializedVersion: 3
@@ -17363,6 +17401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &881974324
 Animator:
   serializedVersion: 3
@@ -17625,6 +17664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &900113039
 Animator:
   serializedVersion: 3
@@ -17699,6 +17739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &905259938
 Animator:
   serializedVersion: 3
@@ -17793,6 +17834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &925732212
 Animator:
   serializedVersion: 3
@@ -17985,6 +18027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &957038888
 Animator:
   serializedVersion: 3
@@ -18286,6 +18329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1003195152
 Animator:
   serializedVersion: 3
@@ -18757,6 +18801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!195 &1045058126
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18812,6 +18857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1046613714
 Animator:
   serializedVersion: 3
@@ -18886,6 +18932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1049170762
 Animator:
   serializedVersion: 3
@@ -19070,6 +19117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1070678806
 Animator:
   serializedVersion: 3
@@ -19526,6 +19574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1085310590
 Animator:
   serializedVersion: 3
@@ -19600,6 +19649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1085721058
 Animator:
   serializedVersion: 3
@@ -19856,6 +19906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1112162618
 Animator:
   serializedVersion: 3
@@ -20050,6 +20101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1130587504
 Animator:
   serializedVersion: 3
@@ -20393,6 +20445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1162716543
 Animator:
   serializedVersion: 3
@@ -20453,7 +20506,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 446900662}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1162928432
+--- !u!64 &1162928435
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20493,6 +20546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1168016604
 Animator:
   serializedVersion: 3
@@ -21470,6 +21524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1254594417
 Animator:
   serializedVersion: 3
@@ -23846,6 +23901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1339890645
 Animator:
   serializedVersion: 3
@@ -24349,6 +24405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1381025241
 Animator:
   serializedVersion: 3
@@ -24423,6 +24480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1383695359
 Animator:
   serializedVersion: 3
@@ -24558,6 +24616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1397240390
 Animator:
   serializedVersion: 3
@@ -24732,6 +24791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1403729283
 Animator:
   serializedVersion: 3
@@ -24899,6 +24959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1429315392
 Animator:
   serializedVersion: 3
@@ -25502,6 +25563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1474797204
 Animator:
   serializedVersion: 3
@@ -25576,6 +25638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1477647314
 Animator:
   serializedVersion: 3
@@ -25839,6 +25902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1490500094
 Animator:
   serializedVersion: 3
@@ -26336,6 +26400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1519979588
 Animator:
   serializedVersion: 3
@@ -26788,6 +26853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1550210640
 Animator:
   serializedVersion: 3
@@ -27338,6 +27404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1581021778
 Animator:
   serializedVersion: 3
@@ -27399,6 +27466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1588988529
 Animator:
   serializedVersion: 3
@@ -27665,6 +27733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1621851850
 Animator:
   serializedVersion: 3
@@ -27739,6 +27808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1623310498
 Animator:
   serializedVersion: 3
@@ -27844,6 +27914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1641166804
 Animator:
   serializedVersion: 3
@@ -28248,6 +28319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1662866919
 Animator:
   serializedVersion: 3
@@ -28976,6 +29048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1724586953
 Animator:
   serializedVersion: 3
@@ -29050,6 +29123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1732579570
 Animator:
   serializedVersion: 3
@@ -29438,6 +29512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1748926709
 Animator:
   serializedVersion: 3
@@ -29581,6 +29656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1777052778
 Animator:
   serializedVersion: 3
@@ -30380,6 +30456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1788728944
 Animator:
   serializedVersion: 3
@@ -30660,6 +30737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1796833204
 Animator:
   serializedVersion: 3
@@ -30734,6 +30812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1802354856
 Animator:
   serializedVersion: 3
@@ -32112,6 +32191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1828891129
 Animator:
   serializedVersion: 3
@@ -32286,6 +32366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1829822383
 Animator:
   serializedVersion: 3
@@ -32400,6 +32481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1859823063
 Animator:
   serializedVersion: 3
@@ -32868,6 +32950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1887394315
 Animator:
   serializedVersion: 3
@@ -32942,6 +33025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1891935672
 Animator:
   serializedVersion: 3
@@ -33103,6 +33187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1904933431
 Animator:
   serializedVersion: 3
@@ -33525,6 +33610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1943302863
 Animator:
   serializedVersion: 3
@@ -33585,7 +33671,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 446900662}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1944364606
+--- !u!64 &1944364609
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33749,6 +33835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1960259388
 Animator:
   serializedVersion: 3
@@ -34239,6 +34326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &1991817184
 Animator:
   serializedVersion: 3
@@ -34930,6 +35018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &2043333351
 Animator:
   serializedVersion: 3
@@ -35289,6 +35378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &2057986476
 Animator:
   serializedVersion: 3
@@ -35780,6 +35870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &2076716341
 Animator:
   serializedVersion: 3
@@ -35854,6 +35945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: {fileID: 174938337}
   destroyWhenOnDestination: 0
+  idle: 0
 --- !u!95 &2080514779
 Animator:
   serializedVersion: 3
