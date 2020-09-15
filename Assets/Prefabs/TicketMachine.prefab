@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 3351952468198635639}
   - component: {fileID: 1422262174804257273}
   m_Layer: 8
-  m_Name: Maquina
+  m_Name: TicketMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

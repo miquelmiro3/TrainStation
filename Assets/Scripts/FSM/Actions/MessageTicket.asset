@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MessageTicket
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: 
+  message: "Busca una m\xE1quina de tickets y compra uno."
