@@ -8,7 +8,11 @@ public class StationAlarm : MonoBehaviour
 	public bool alarmOn;
 	public static StationAlarm instance;
 
-	public bool GetAlarmState() {
+	static public void ActivateAlarm() {
+		instance.alarmOn=true;
+	}
+
+	static public bool GetAlarmState() {
 		return instance.alarmOn;
 	}
 

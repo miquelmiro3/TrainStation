@@ -6,10 +6,8 @@ using UnityEngine;
 public class IsAlarmOn : Decision
 {
 
-	public StationAlarm alarm;
-
 	public override bool Decide(FSMcontroller controller) {
-		return alarm.GetAlarmState();
+		return StationAlarm.GetAlarmState();
 	}
 
 }
