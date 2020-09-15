@@ -6,7 +6,7 @@ public class TaskHandler : MonoBehaviour
 {
 
 	public static TaskHandler instance;
-	public bool taskDone;
+	public bool[] flags;
 
     public void Start()
     {

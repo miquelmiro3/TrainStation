@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight_material: {fileID: 2100000, guid: cb3ace375aea93349890113a3a746e56, type: 2}
   isReady: 0
+  flagID: 1
 --- !u!95 &8188926132831050147
 Animator:
   serializedVersion: 3

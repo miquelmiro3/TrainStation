@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
   m_Name: ThirdTask
   m_EditorClassIdentifier: 
-  decision: {fileID: 11400000, guid: 1b0c146b315b1584a953669fd91bbdb7, type: 2}
+  decision: {fileID: 11400000, guid: 11306e13364ba9449a6e06dc9d201072, type: 2}
   destinationState: {fileID: 11400000, guid: 9e7e6ac5fef4c7341866f279d9bebec0, type: 2}
