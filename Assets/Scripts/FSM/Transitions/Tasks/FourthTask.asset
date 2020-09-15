@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
   m_Name: FourthTask
   m_EditorClassIdentifier: 
-  decision: {fileID: 11400000, guid: 1b0c146b315b1584a953669fd91bbdb7, type: 2}
+  decision: {fileID: 11400000, guid: 0f9cfa6338c379841a4554572e8fd754, type: 2}
   destinationState: {fileID: 11400000, guid: 9cfad1a7b5016df4280eb060645e9491, type: 2}
