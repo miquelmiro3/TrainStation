@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bc7b10d07cfbd4b90e92035dd86fbe, type: 3}
   m_Name: PlayerInChargingStation
   m_EditorClassIdentifier: 
-  pointA: {x: -64, y: 0, z: 20}
+  pointA: {x: -66, y: 0, z: 20}
   pointB: {x: -53, y: 0, z: 23}
