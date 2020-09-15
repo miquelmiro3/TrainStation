@@ -10,6 +10,7 @@ public class NavMeshNavigator : MonoBehaviour
 	private NavMeshAgent agent;
 	public NavMeshPoints targets;
 	public bool destroyWhenOnDestination;
+	public bool idle;
 	private float timeToConsiderStuck;
 	private float stuckDistance;
 	private float stuckTimer;
@@ -67,7 +68,7 @@ public class NavMeshNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (!agent.pathPending) {
+		if (!idle && !agent.pathPending) {
 			if (destroyWhenOnDestination && agent.remainingDistance<=0.4) Destroy(gameObject);
 			else if (agent.remainingDistance<=0.2) SetRandomDestination();
 			else if (!panicking) CheckIfStuck();
