@@ -15,7 +15,7 @@ public class Move : FSMaction
 			controller.transform.Translate(new Vector3(0, 0, speed*Time.deltaTime));
 		} else {
 			if (hit.transform.gameObject.layer==LayerMask.NameToLayer("Interactuable")) {
-				hit.transform.gameObject.GetComponent<TicketMachine>().AskForTicket();
+				hit.transform.gameObject.GetComponent<Dispenser>().AskForTicket();
 			}
 		}
 	}

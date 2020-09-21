@@ -11,9 +11,9 @@ public class WaitingForATicket : Decision
 	public override bool Decide(FSMcontroller controller) {
 		RaycastHit hit;
 		if (Physics.Raycast(controller.transform.position, controller.transform.TransformDirection(Vector3.forward), out hit, distance, LayerMask.GetMask("Interactuable"))) {
-			if (hit.transform.gameObject.GetComponent<TicketMachine>()) {
-				if (trueWhilePrinting) return hit.transform.gameObject.GetComponent<TicketMachine>().printing;
-				else return !hit.transform.gameObject.GetComponent<TicketMachine>().printing;
+			if (hit.transform.gameObject.GetComponent<Dispenser>()) {
+				if (trueWhilePrinting) return hit.transform.gameObject.GetComponent<Dispenser>().printing;
+				else return !hit.transform.gameObject.GetComponent<Dispenser>().printing;
 			}
 		}
 		return false;

@@ -10,9 +10,8 @@ public class Collectable : Interactuable, IInteractable
 	private float timeToDestroy;
 
 	public void Interact() {
-		Debug.Log("You get a ticket");
 		if (flagID>=0) TaskHandler.instance.flags[flagID]=true;
-		transform.parent.gameObject.GetComponent<TicketMachine>().DelayedMakeInteractuable(0.5f);
+		transform.parent.gameObject.GetComponent<Dispenser>().DelayedMakeInteractuable(0.5f);
 		Destroy(gameObject);
 	}
 
@@ -30,8 +29,7 @@ public class Collectable : Interactuable, IInteractable
 		base.Update();
 		timeToDestroy-=Time.deltaTime;
 		if (timeToDestroy<=0.0f) {
-			Debug.Log("Remember to pick up the ticket... We've disposed of one you left in the machine.");
-			transform.parent.gameObject.GetComponent<TicketMachine>().MakeInteractuable();
+			transform.parent.gameObject.GetComponent<Dispenser>().MakeInteractuable();
 			Destroy(gameObject);
 		}
 	}
