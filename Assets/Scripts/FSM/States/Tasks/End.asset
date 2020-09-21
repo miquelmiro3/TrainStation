@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b414d63a905ba254fa5043935afd7143, type: 3}
-  m_Name: Task05_AlarmTriggered
+  m_Name: End
   m_EditorClassIdentifier: 
   isStayState: 0
   stayState: {fileID: 11400000, guid: 727d0bc6ab9e6f347b60b6ddbcc34e50, type: 2}
   onEnterActions:
-  - {fileID: 11400000, guid: be3b2b907e5891e49b5405ebefad22c2, type: 2}
-  - {fileID: 11400000, guid: 64fbd13df35c84b49a9cb10b6324c301, type: 2}
+  - {fileID: 11400000, guid: 174832d79d1fcd24d8ab108458ee390c, type: 2}
   constantActions: []
-  transitions:
-  - {fileID: 11400000, guid: f8f98153525daf747be85a3ad1a3cbf5, type: 2}
-  - {fileID: 11400000, guid: 4f88c00c8e9611543b83cedac992a05a, type: 2}
+  transitions: []

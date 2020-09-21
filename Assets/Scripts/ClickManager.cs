@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-	private static ClickManager instance;
+	public static ClickManager instance;
 	public float distance_for_interactions; // Indicates the maximum distance to allow an interaction with an object in vr_mode==false
 	public bool vr_mode;
 	private LayerMask l_mask;
@@ -44,8 +44,7 @@ public class ClickManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-		if (instance) Destroy(this);
-		instance=this;
+		ClickManager.instance=this;
         l_mask = LayerMask.GetMask("Interactuable");
 		Debug.Log(gameObject.name);
 	}
