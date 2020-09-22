@@ -17,6 +17,7 @@ MonoBehaviour:
   onEnterActions:
   - {fileID: 11400000, guid: be3b2b907e5891e49b5405ebefad22c2, type: 2}
   - {fileID: 11400000, guid: 64fbd13df35c84b49a9cb10b6324c301, type: 2}
+  - {fileID: 11400000, guid: a86716e1d389e9f45bb72c5da1a82665, type: 2}
   constantActions: []
   transitions:
   - {fileID: 11400000, guid: f8f98153525daf747be85a3ad1a3cbf5, type: 2}

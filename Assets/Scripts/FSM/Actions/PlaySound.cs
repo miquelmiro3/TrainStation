@@ -6,8 +6,9 @@ using UnityEngine;
 public class PlaySound : FSMaction {
 
 	public int id;
+	public float delay;
 
 	public override void Act(FSMcontroller controller) {
-		AudioPlayer.instance.PlayAudio(id);
+		AudioPlayer.instance.PlayAudio(id,delay);
 	}
 }

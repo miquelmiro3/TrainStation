@@ -11,8 +11,8 @@ public class AudioPlayer : MonoBehaviour
 		AudioPlayer.instance=this;
 	}
 
-	public void PlayAudio(int id) {
+	public void PlayAudio(int id, float delay) {
 		AudioSource[] audios = GetComponents<AudioSource>();
-		audios[id].Play();
+		audios[id].PlayDelayed(delay);
 	}
 }
