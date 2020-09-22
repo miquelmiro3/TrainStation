@@ -11,6 +11,7 @@ public class NavMeshNavigator : MonoBehaviour
 	public NavMeshPoints targets;
 	public bool destroyWhenOnDestination;
 	public bool idle;
+	public float randomRadius;
 	private float timeToConsiderStuck;
 	private float stuckDistance;
 	private float stuckTimer;
@@ -43,8 +44,20 @@ public class NavMeshNavigator : MonoBehaviour
 		}
 	}
 
+	private Vector3 RandomNavmeshLocation(float radius) {
+		Vector3 randomDirection = Random.insideUnitSphere*radius;
+		randomDirection+=transform.position;
+		NavMeshHit hit;
+		Vector3 finalPosition = Vector3.zero;
+		if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
+			finalPosition=hit.position;
+		}
+		return finalPosition;
+	}
+
 	private void SetRandomDestination() {
-		agent.SetDestination(targets.GetRandomPoint());
+		//agent.SetDestination(targets.GetRandomPoint());
+		agent.SetDestination(RandomNavmeshLocation(randomRadius));
 	}
 
 	private void GetOppositeDestination() {
@@ -61,6 +74,7 @@ public class NavMeshNavigator : MonoBehaviour
 		stuckTimer=0;
 		timeToConsiderStuck=0.5f;
 		stuckDistance=0.2f;
+		randomRadius=30f;
 		stuckPosition=transform.position;
 		panicking=false;
     }
