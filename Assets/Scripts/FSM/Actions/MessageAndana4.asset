@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MessageAndana4
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: "Ve al and\xE9n 4."
+  message: Go to platform 4.

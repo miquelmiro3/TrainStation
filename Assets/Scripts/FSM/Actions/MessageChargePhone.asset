@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MessageChargePhone
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: "Busca una forma de cargar tu m\xF3vil."
+  message: Look for someplace to charge your phone.

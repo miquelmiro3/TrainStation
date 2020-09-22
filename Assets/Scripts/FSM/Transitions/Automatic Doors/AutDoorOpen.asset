@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
-  m_Name: AutDoorOpenGeneric
+  m_Name: AutDoorOpen
   m_EditorClassIdentifier: 
   decision: {fileID: 11400000, guid: 2bc78bef07de616488d08166f8ef552d, type: 2}
   destinationState: {fileID: 11400000, guid: a7057d0dce5161245ab557d9e123313b, type: 2}

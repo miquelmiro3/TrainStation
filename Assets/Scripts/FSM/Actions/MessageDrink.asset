@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MessageDrink
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: "Busca una m\xE1quina de bebidas y compra una Coca-Cola."
+  message: Look for a drink machine and buy a Coca-Cola.

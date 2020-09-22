@@ -18,13 +18,11 @@ public class AutomaticDoor : MonoBehaviour
 
 	void OnTriggerEnter(Collider other) {
 		peopleInside=peopleInside+1;
-		Debug.Log("Enter "+peopleInside);
 		fsm.customFlag=true;
 	}
 
 	void OnTriggerExit(Collider other) {
 		peopleInside=peopleInside-1;
-		Debug.Log("Exit "+ peopleInside);
 		if (peopleInside==0) fsm.customFlag=false;
 	}
 }
