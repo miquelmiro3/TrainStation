@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
   obj: {fileID: 6404004038878785658, guid: c5b8287d24c272542b62aec971cee682, type: 3}
-  position: {x: -76.63, y: 3.54, z: -4.62}
+  position: {x: -76.63, y: 2.01, z: -2.77}

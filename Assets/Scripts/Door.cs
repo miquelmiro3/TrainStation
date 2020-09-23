@@ -11,4 +11,9 @@ public class Door : Interactuable, IInteractable {
 		GetComponent<BoxCollider>().enabled=false;
 		MakeUninteractuable();
 	}
+
+	override protected void Start() {
+		base.Start();
+		Interact();
+	}
 }
