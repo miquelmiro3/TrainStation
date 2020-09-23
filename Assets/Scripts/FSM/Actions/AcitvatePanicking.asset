@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6252c5758a1576143868273a40bad6d1, type: 3}
   m_Name: AcitvatePanicking
   m_EditorClassIdentifier: 
-  condition: {fileID: 0}
+  condition: {fileID: 11400000, guid: 9ddb09ed6f11945459b27e632da5fb81, type: 2}

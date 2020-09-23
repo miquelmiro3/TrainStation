@@ -9,6 +9,6 @@ public class PlaySound : FSMaction {
 	public float delay;
 
 	public override void Act(FSMcontroller controller) {
-		AudioPlayer.instance.PlayAudio(id,delay);
+		if (!condition || condition.Decide(controller)) AudioPlayer.instance.PlayAudio(id,delay);
 	}
 }

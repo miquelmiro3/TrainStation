@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c4f98432ab01240bb53773103be4f2, type: 3}
   m_Name: DestinationExit
   m_EditorClassIdentifier: 
-  condition: {fileID: 0}
+  condition: {fileID: 11400000, guid: 9ddb09ed6f11945459b27e632da5fb81, type: 2}
   destroyWhenOnDestination: 1
   destination: {x: -46.5, y: 0, z: 28.5}

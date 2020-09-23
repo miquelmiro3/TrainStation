@@ -6,6 +6,7 @@ public class StationAlarm : MonoBehaviour
 {
 
 	public bool alarmOn;
+	public bool doPeoplePanic;
 	public GameObject lightAnimator;
 	public static StationAlarm instance;
 

@@ -1,7 +1,5 @@
 DETALLS
 - Arreglar avatars que atravessen portes ??
-- No pujar als bancs
-- Treure mans i gir
 - Tancar aplicació al acabar
 
 PRESCINDIBLE
@@ -17,4 +15,6 @@ FET
 - Trigger abans d'arribar a recarregar el movil (cambiat perquè sigui al tornar)
 - Botó de córrer
 - Alarma, foc, crits i gent corrent no tot alhora
-- Les portes estan obertes i es tanquen amb l'alarma
+- Les portes estan obertes i es tanquen amb l'alarma.
+- Treure mans i gir
+- No pujar als bancs

@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alarmOn: 0
+  doPeoplePanic: 1
+  lightAnimator: {fileID: 0}

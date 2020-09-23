@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3f2bac07a52d74991a566a6b911c47, type: 3}
-  m_Name: AnimTriggerPanic
+  m_Script: {fileID: 11500000, guid: dff204aade70cff4bb1c0132ea9b11eb, type: 3}
+  m_Name: AlarmON and PeoplePanicActivated
   m_EditorClassIdentifier: 
-  condition: {fileID: 11400000, guid: 9ddb09ed6f11945459b27e632da5fb81, type: 2}
-  triggerName: Panic
+  d1: {fileID: 0}
+  d2: {fileID: 0}
