@@ -5,12 +5,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class MovementProvider : LocomotionProvider
 {
-	public float speed = 1.0f;
+	public float speed;
+	public float normalSpeed = 2.5f;
+	public float fastSpeed = 3f;
 	public float gravityMultiplier = 1.0f;
 	public List<XRController> controllers = null;
 
 	private CharacterController characterController = null;
 	private GameObject head = null;
+
+	public void FastSpeedMode(bool fast) {
+		if (fast) speed=fastSpeed;
+		else speed=normalSpeed;
+	}
 
     protected override void Awake()
     {
@@ -20,6 +27,7 @@ public class MovementProvider : LocomotionProvider
 
     private void Start()
     {
+		speed=normalSpeed;
 		PositionController();
     }
 

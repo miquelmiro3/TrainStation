@@ -5,17 +5,22 @@ using UnityEngine;
 public class ClickManager : MonoBehaviour
 {
 	public static ClickManager instance;
+	public MovementProvider mp;
 	public float distance_for_interactions; // Indicates the maximum distance to allow an interaction with an object in vr_mode==false
 	public bool vr_mode;
 	private LayerMask l_mask;
 	public GameObject last_selected;
 
+	public void ReleaseLeftClick() {
+		mp.FastSpeedMode(false);
+	}
+
 	public void LeftClick() {
-		if (instance.last_selected) instance.last_selected.GetComponent<IInteractable>().Interact();
+		mp.FastSpeedMode(true);
 	}
 
 	public void RightClick() {
-		Debug.Log("RightClick");
+		if (instance.last_selected) instance.last_selected.GetComponent<IInteractable>().Interact();
 	}
 
 	public void SelectObject(GameObject go) {

@@ -53,7 +53,11 @@ public class HandController : MonoBehaviour
 			if (primary2DAxisValue!=Vector2.zero) Debug.Log("Primary Touchpad "+primary2DAxisValue);
 		}
 		targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
-		if (triggerValue>0.1f && clickm) clickm.LeftClick();
+		if (clickm && controllerCharacteristics==InputDeviceCharacteristics.Left) {
+			if (triggerValue>0.1f) clickm.LeftClick();
+			else clickm.ReleaseLeftClick();
+		}
+		if (triggerValue>0.1f && clickm && controllerCharacteristics==InputDeviceCharacteristics.Right) clickm.RightClick();
 		UpdateHandAnimation();
     }
 }
