@@ -9,6 +9,11 @@ public class FSMcontroller : MonoBehaviour
 	// Flag used by some ScriptableObjects in order to communicate certain triggers
 	public bool customFlag;
 
+	public void DelayedAction(GameObject holder, FSMaction act, float time) {
+		GameObject go = Instantiate(holder);
+		go.GetComponent<DelayedAction>().DelayedAct(act, this, time);
+	}
+
 	public void InstantiateObject(GameObject obj, Vector3 pos) {
 		Instantiate(obj, pos, obj.transform.rotation);
 	}

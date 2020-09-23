@@ -1,12 +1,5 @@
-IMPORTANT
-- Foc
-- Alarma, foc, crits i gent corrent no tot alhora
-- Trigger abans d'arribar a recarregar el movil
-- Botó de córrer
-
 DETALLS
-- Arreglar avatars que atravessen portes
-- Les portes estan obertes i es tanquen amb l'alarma
+- Arreglar avatars que atravessen portes ??
 - No pujar als bancs
 - Treure mans i gir
 - Tancar aplicació al acabar
@@ -18,3 +11,10 @@ PRESCINDIBLE
 
 IMPOSSIBLE
 - Personatges que floten
+
+FET
+- Foc
+- Trigger abans d'arribar a recarregar el movil (cambiat perquè sigui al tornar)
+- Botó de córrer
+- Alarma, foc, crits i gent corrent no tot alhora
+- Les portes estan obertes i es tanquen amb l'alarma
