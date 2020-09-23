@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MessageDrink
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: Look for a drink machine and buy a Coca-Cola.
+  message: Buy a Coca-Cola
   duration: 5

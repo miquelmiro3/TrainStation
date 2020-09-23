@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MessageAndana4
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: Go to platform 4.
+  message: Go to platform 4
   duration: 2

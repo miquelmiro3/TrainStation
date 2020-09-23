@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MessageExit
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: Look for an exit.
+  message: Look for an exit
   duration: 1.5

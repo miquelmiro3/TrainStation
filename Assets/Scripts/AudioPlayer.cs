@@ -16,8 +16,10 @@ public class AudioPlayer : MonoBehaviour
 	IEnumerator PlayRepeatableAnnouncement(int id) {
 		AudioSource[] audios = GetComponents<AudioSource>();
 		yield return new WaitForSeconds(repeatableWait+audios[id].clip.length);
-		instance.PlayAudio(id, 0);
-		StartCoroutine(instance.PlayRepeatableAnnouncement(id));
+		if (!StationAlarm.instance.alarmOn) {
+			instance.PlayAudio(id, 0);
+			StartCoroutine(instance.PlayRepeatableAnnouncement(id));
+		}
 	}
 
 	public void PlayAudio(int id, float delay) {

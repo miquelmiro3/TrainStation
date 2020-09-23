@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MessageTicket
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  message: Look for a ticket machine and buy one.
+  message: Buy a ticket at a machine
   duration: 5
