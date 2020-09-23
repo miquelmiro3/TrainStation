@@ -9,6 +9,10 @@ public class FSMcontroller : MonoBehaviour
 	// Flag used by some ScriptableObjects in order to communicate certain triggers
 	public bool customFlag;
 
+	public void InstantiateObject(GameObject obj, Vector3 pos) {
+		Instantiate(obj, pos, obj.transform.rotation);
+	}
+
 	private void Start() {
 		activeState.OnEnterState(this);
 	}

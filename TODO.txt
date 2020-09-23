@@ -1,0 +1,20 @@
+IMPORTANT
+- Foc
+- Alarma, foc, crits i gent corrent no tot alhora
+- Trigger abans d'arribar a recarregar el movil
+- Botó de córrer
+
+DETALLS
+- Arreglar avatars que atravessen portes
+- Les portes estan obertes i es tanquen amb l'alarma
+- No pujar als bancs
+- Treure mans i gir
+- Tancar aplicació al acabar
+
+PRESCINDIBLE
+- Trens que es mouen
+- So de trens
+- Fer que la megafonia canvii de missatge
+
+IMPOSSIBLE
+- Personatges que floten
