@@ -1,6 +1,6 @@
 DETALLS
-- Arreglar avatars que atravessen portes ??
-- Tancar aplicació al acabar
+- Arreglar avatars que atravessen portes
+- Reduir la probabilitat de correr amb els braços aixecats
 
 PRESCINDIBLE
 - Trens que es mouen
@@ -18,3 +18,5 @@ FET
 - Les portes estan obertes i es tanquen amb l'alarma.
 - Treure mans i gir
 - No pujar als bancs
+- Checkbox per a que la gent no cridi ni corri
+- Tancar aplicació al acabar

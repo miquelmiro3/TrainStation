@@ -18,6 +18,10 @@ public class FSMcontroller : MonoBehaviour
 		Instantiate(obj, pos, obj.transform.rotation);
 	}
 
+	public void CloseApp() {
+		Application.Quit();
+	}
+
 	private void Start() {
 		activeState.OnEnterState(this);
 	}
