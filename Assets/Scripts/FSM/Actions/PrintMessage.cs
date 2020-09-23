@@ -6,9 +6,10 @@ using UnityEngine;
 public class PrintMessage : FSMaction {
 
 	public string message;
+	public float duration;
 
 	public override void Act(FSMcontroller controller) {
-		MessageVR.PrintMessage(message);
+		MessageVR.PrintMessage(message, duration);
 	}
 
 }

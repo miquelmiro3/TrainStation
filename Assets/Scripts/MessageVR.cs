@@ -12,12 +12,13 @@ public class MessageVR : MonoBehaviour
 	public bool printing;
 	private Text t;
 
-	public static void PrintMessage(string m) {
-		MessageVR.instance.ShowMessage(m);
+	public static void PrintMessage(string m, float duration) {
+		MessageVR.instance.ShowMessage(m, duration);
 	}
 
-	public void ShowMessage(string m) {
+	public void ShowMessage(string m, float duration) {
 		message=m;
+		if (duration>0) time=duration;
 		t.text=message;
 		timer=time;
 		foreach (Transform child in transform) {
