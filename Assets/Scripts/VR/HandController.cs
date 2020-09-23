@@ -13,6 +13,7 @@ public class HandController : MonoBehaviour
 	private GameObject spawnedController;
 	private Animator animatorController;
 
+	public bool enableVirtualHands;
 	public bool debugPrintON;
 
     // Start is called before the first frame update
@@ -29,8 +30,10 @@ public class HandController : MonoBehaviour
 
 		if (devices.Count>0) {
 			targetDevice=devices[0];
-			spawnedController=Instantiate(controllerModel, transform);
-			animatorController=spawnedController.GetComponent<Animator>();
+			if (enableVirtualHands) {
+				spawnedController=Instantiate(controllerModel, transform);
+				animatorController=spawnedController.GetComponent<Animator>();
+			}
 		}
     }
 
@@ -58,6 +61,8 @@ public class HandController : MonoBehaviour
 			else clickm.ReleaseLeftClick();
 		}
 		if (triggerValue>0.1f && clickm && controllerCharacteristics==InputDeviceCharacteristics.Right) clickm.RightClick();
-		UpdateHandAnimation();
+		if (enableVirtualHands) {
+			UpdateHandAnimation();
+		}
     }
 }
