@@ -19,7 +19,11 @@ public class FSMcontroller : MonoBehaviour
 	}
 
 	public void CloseApp() {
-		Application.Quit();
+		#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+		#else
+			Application.Quit();
+		#endif
 	}
 
 	private void Start() {
