@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AnimTriggerIdle
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  triggerName: 
+  triggerName: Idle
