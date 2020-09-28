@@ -33,7 +33,7 @@ public class Dispenser : Interactuable, IInteractable
 	override protected void Start() {
 		base.Start();
 		timeForSpawn=0.0f;
-		cooldownForSpawn=3.0f;
+		cooldownForSpawn=0.5f;
 		printing=false;
 	}
 
