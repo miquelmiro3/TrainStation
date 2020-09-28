@@ -6,7 +6,7 @@ public class Collectable : Interactuable, IInteractable
 {
 	public bool isReady;
 	public int flagID;
-	// Variable used to indicate a time value to destroy the ticket, to avoid people getting stuck in lines because of the player's actions
+	// Variable used to indicate a time value to destroy the ticket, to avoid leaving a floating item permanently
 	private float timeToDestroy;
 
 	public void Interact() {
@@ -22,7 +22,7 @@ public class Collectable : Interactuable, IInteractable
 	protected override void Start() {
 		base.Start();
 		isReady=false;
-		timeToDestroy=5.0f;
+		timeToDestroy=10.0f;
 	}
 
 	protected override void Update() {

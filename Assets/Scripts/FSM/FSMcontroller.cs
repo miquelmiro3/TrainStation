@@ -7,7 +7,7 @@ public class FSMcontroller : MonoBehaviour
 	// The current State in the FSM. The initial value indicates the initial state.
 	public FSMstate activeState;
 	// Flag used by some ScriptableObjects in order to communicate certain triggers
-	public bool customFlag;
+	[HideInInspector] public bool customFlag;
 
 	public void DelayedAction(GameObject holder, FSMaction act, float time) {
 		GameObject go = Instantiate(holder);
