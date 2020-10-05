@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Decision : ScriptableObject
+public abstract class FSMdecision : ScriptableObject
 {
 	public abstract bool Decide(FSMcontroller controller);
 }

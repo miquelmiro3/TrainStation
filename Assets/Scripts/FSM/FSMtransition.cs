@@ -6,6 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Transition", menuName = "FSM/Transition")]
 public class FSMtransition : ScriptableObject
 {
-	public Decision decision;
+	public FSMdecision decision;
 	public FSMstate destinationState;
 }

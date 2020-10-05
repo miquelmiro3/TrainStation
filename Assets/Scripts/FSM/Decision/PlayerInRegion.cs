@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "new PlayerInRegion", menuName = "FSM/Decision/Player in region")]
-public class PlayerInRegion : Decision {
+public class PlayerInRegion : FSMdecision {
 
 	public Vector3 pointA;
 	public Vector3 pointB;
