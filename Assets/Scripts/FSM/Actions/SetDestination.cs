@@ -8,9 +8,11 @@ public class SetDestination : FSMaction
 
 	public bool destroyWhenOnDestination;
 	public Vector3 destination;
+	public bool random;
 
 	public override void Act(FSMcontroller controller) {
-		controller.GetComponent<NavMeshNavigator>().SetDestination(destination);
+		if (random) controller.GetComponent<NavMeshNavigator>().SetRandomDestination();
+		else controller.GetComponent<NavMeshNavigator>().SetDestination(destination);
 		controller.GetComponent<NavMeshNavigator>().destroyWhenOnDestination=destroyWhenOnDestination;
 	}
 }
