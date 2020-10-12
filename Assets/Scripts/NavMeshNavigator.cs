@@ -17,6 +17,7 @@ public class NavMeshNavigator : MonoBehaviour
 	private float stuckTimer;
 	private Vector3 stuckPosition;
 	private bool panicking;
+	private int idleChance;
 
 	public void ActivatePanicking() {
 		panicking=true;
@@ -77,15 +78,21 @@ public class NavMeshNavigator : MonoBehaviour
 		randomRadius=30f;
 		stuckPosition=transform.position;
 		panicking=false;
+		idleChance=35;
+		if (!idle) SetRandomDestination();
     }
 
     // Update is called once per frame
     void Update()
     {
 		if (!idle && !agent.pathPending) {
-			if (destroyWhenOnDestination && agent.remainingDistance<=0.4) Destroy(gameObject);
-			else if (agent.remainingDistance<=0.2) SetRandomDestination();
-			else if (!panicking) CheckIfStuck();
+			if (destroyWhenOnDestination&&agent.remainingDistance<=0.4) Destroy(gameObject);
+			else if (agent.remainingDistance<=0.2) {
+				if (Random.Range(0, 100)<idleChance) {
+					idle=true;
+				}
+				else SetRandomDestination();
+			} else if (!panicking) CheckIfStuck();
 		}
     }
 }
