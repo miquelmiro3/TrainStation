@@ -81,7 +81,7 @@ public class NavMeshNavigator : MonoBehaviour
 		randomRadius=30f;
 		stuckPosition=transform.position;
 		panicking=false;
-		idleChance=50;
+		idleChance=15;
 		if (!idle) {
 			alwaysIdle=false;
 			timeIdling=Random.Range(6f,12f);
