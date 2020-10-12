@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
   m_Name: GoIdle
   m_EditorClassIdentifier: 
-  decision: {fileID: 0}
-  destinationState: {fileID: 0}
+  decision: {fileID: 11400000, guid: 9d0b6a2062fac354892387182e28f06d, type: 2}
+  destinationState: {fileID: 11400000, guid: a858716e97a39fe4f84a115c3cf72656, type: 2}

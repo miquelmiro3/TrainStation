@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a725e058cbacc6418dbc818022756db, type: 3}
   m_Name: IsNotIdle
   m_EditorClassIdentifier: 
-  negate: 0
+  negate: 1
