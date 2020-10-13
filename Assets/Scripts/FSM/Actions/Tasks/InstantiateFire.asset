@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: InstantiateFire
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  obj: {fileID: 6404004038878785658, guid: c5b8287d24c272542b62aec971cee682, type: 3}
-  position: {x: -76.63, y: 2.01, z: -2.77}
+  obj: {fileID: 4101185143086116778, guid: 16e8b25f7a4107447986221b109cf045, type: 3}
+  position: {x: -73.63, y: 2.81, z: -4.901695}
