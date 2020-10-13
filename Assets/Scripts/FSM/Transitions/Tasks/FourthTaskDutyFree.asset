@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49bc7b10d07cfbd4b90e92035dd86fbe, type: 3}
-  m_Name: PlayerOutChargingStation
+  m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
+  m_Name: FourthTaskDutyFree
   m_EditorClassIdentifier: 
-  pointA: {x: -150, y: 0, z: -60}
-  pointB: {x: -50, y: 0, z: 15}
+  decision: {fileID: 11400000, guid: 0f9cfa6338c379841a4554572e8fd754, type: 2}
+  destinationState: {fileID: 11400000, guid: 59d40127845a9764e8ab936bf3ccd0d0, type: 2}

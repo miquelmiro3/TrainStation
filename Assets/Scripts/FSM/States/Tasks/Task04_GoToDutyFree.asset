@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b414d63a905ba254fa5043935afd7143, type: 3}
-  m_Name: Task03_GoToPlatform4
+  m_Name: Task04_GoToDutyFree
   m_EditorClassIdentifier: 
   isStayState: 0
   stayState: {fileID: 11400000, guid: 727d0bc6ab9e6f347b60b6ddbcc34e50, type: 2}
   onEnterActions:
-  - {fileID: 11400000, guid: 264311ae7fd2806459f035aa70cbde0c, type: 2}
+  - {fileID: 11400000, guid: 51be5ea1e7fe74846bab38c2cc160a5a, type: 2}
   constantActions: []
   transitions:
-  - {fileID: 11400000, guid: 1852ea4d26f7cfa4699fd7714d6e19ac, type: 2}
+  - {fileID: 11400000, guid: d1cc26f09d0a1af4e90c81e2c8cbbbda, type: 2}
