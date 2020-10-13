@@ -61,7 +61,7 @@ public class NavMeshNavigator : MonoBehaviour
 
 	public void SetRandomDestination() {
 		//agent.SetDestination(targets.GetRandomPoint());
-		agent.SetDestination(RandomNavmeshLocation(randomRadius));
+		if (agent) agent.SetDestination(RandomNavmeshLocation(randomRadius));
 	}
 
 	private void GetOppositeDestination() {
