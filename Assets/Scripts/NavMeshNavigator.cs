@@ -24,6 +24,7 @@ public class NavMeshNavigator : MonoBehaviour
 
 	public void ActivatePanicking() {
 		panicking=true;
+		idle=false;
 	}
 
 	public void SetDestination(Vector3 dest) {
