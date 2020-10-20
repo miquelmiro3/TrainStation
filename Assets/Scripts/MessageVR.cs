@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MessageVR : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class MessageVR : MonoBehaviour
 	private float timer;
 	public string message;
 	public bool printing;
-	private Text t;
+	private TMP_Text t;
 
 	public static void PrintMessage(string m, float duration) {
 		MessageVR.instance.ShowMessage(m, duration);
@@ -32,7 +33,7 @@ public class MessageVR : MonoBehaviour
     {
 		if (MessageVR.instance) Destroy(this);
 		MessageVR.instance=this;
-		t=GetComponentInChildren<Text>();
+		t=GetComponentInChildren<TMP_Text>();
 		timer=0;
 		printing=true;
     }

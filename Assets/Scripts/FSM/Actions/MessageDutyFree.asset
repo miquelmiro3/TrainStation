@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
   message: Go to Duty Free
-  duration: 2
+  duration: 5
