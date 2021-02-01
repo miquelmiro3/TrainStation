@@ -16,6 +16,8 @@ public class FSMstate : ScriptableObject
 	public FSMaction[] onEnterActions;
 	// Array of Actions that take place constantly, each frame, while in this state.
 	public FSMaction[] constantActions;
+	// Array of Actions that take place at the end of this state, when transitioning into another state. DEBUG
+	public FSMaction[] onLeaveActions;
 
 	[Header ("Transitions")]
 	// The order in which the transitions are stored indicates the priority: for a given frame,
@@ -36,6 +38,13 @@ public class FSMstate : ScriptableObject
 		}
 	}
 
+	// Function called by the controller to perform all onLeaveActions DEBUG
+	public void OnLeaveState(FSMcontroller controller) {
+		foreach (FSMaction action in onLeaveActions) {
+			action.Act(controller);
+		}
+	}
+
 	// Function called by the controller to return which state we are gonna move into
 	public FSMstate CheckTransitions(FSMcontroller controller) {
 		foreach (FSMtransition transition in transitions) {
@@ -44,5 +53,18 @@ public class FSMstate : ScriptableObject
 			}
 		}
 		return stayState;
+	}
+
+	public FSMstate Clone() {
+		FSMstate newState = ScriptableObject.CreateInstance("FSMstate") as FSMstate;
+		newState.name = this.name;
+		
+		newState.stayState = this.stayState;
+		newState.onEnterActions = this.onEnterActions;
+		newState.constantActions = this.constantActions;
+		newState.onLeaveActions = this.onLeaveActions;
+		newState.transitions = this.transitions;
+
+		return newState;
 	}
 }

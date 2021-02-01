@@ -27,6 +27,14 @@ public class FSMcontroller : MonoBehaviour
 	}
 
 	private void Start() {
+		TaskManager tm = GetComponent<TaskManager>(); //NEW
+		if (tm) {
+			FSMstate firstTask = tm.GetFirstTask();
+			if (firstTask)
+				activeState = firstTask;
+		}
+		if(name == "Female11.1 (1)") print(activeState); //DEBUG
+
 		activeState.OnEnterState(this);
 	}
 
@@ -34,8 +42,11 @@ public class FSMcontroller : MonoBehaviour
 		activeState.PerformConstantActions(this);
 		FSMstate state = activeState.CheckTransitions(this);
 		if (!state.isStayState) {
+			activeState.OnLeaveState(this);//DEBUG
 			activeState=state;
 			activeState.OnEnterState(this);
+
+			if(name == "Female11.1 (1)") print(activeState); //DEBUG
 		}
 	}
 }
