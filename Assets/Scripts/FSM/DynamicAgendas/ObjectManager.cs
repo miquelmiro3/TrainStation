@@ -63,19 +63,56 @@ public class ObjectManager : MonoBehaviour
     }
 
     public void BookObject(Visibility vis, string type, List<string> candidates) {
-        Dictionary<string, Tuple<GameObject, Vector3, bool>> objects = allObjectPositions[type];
-        string choosenName = "";
-        foreach (string name in candidates) {
-            if (!objects[name].Item3) {
-                choosenName = name;
-                break;
+        if (type != "") {
+            Dictionary<string, Tuple<GameObject, Vector3, bool>> objects = allObjectPositions[type];
+            string choosenName = "";
+            foreach (string name in candidates) {
+                if (!objects[name].Item3) {
+                    choosenName = name;
+                    objects[name] = new Tuple<GameObject, Vector3, bool>(objects[name].Item1, objects[name].Item2, true);
+                    break;
+                }
             }
+            //if (choosenName != "") vis.ObjectFound(objects[choosenName].Item2, objects[choosenName].Item1.transform.position, choosenName);
         }
-        if (choosenName != "") vis.ObjectFound(objects[choosenName].Item2, objects[choosenName].Item1.transform.position, choosenName);
+        else {
+            string choosenName = "";
+            foreach (string name in candidates) {
+                type = name.Split('_')[0];
+                if (!allObjectPositions[type][name].Item3) {
+                    choosenName = name;
+                    allObjectPositions[type][name] = new Tuple<GameObject, Vector3, bool>(allObjectPositions[type][name].Item1, allObjectPositions[type][name].Item2, true);
+                    break;
+                }
+            }
+            //if (choosenName != "") vis.ObjectFound(allObjectPositions[type][choosenName].Item2, allObjectPositions[type][choosenName].Item1.transform.position, choosenName);
+        }
     }
     
     void Awake()
     {
+        string[] listOfPosibleThinkingObjetcs = new string[5]{"Bench", "Bin", "TicketMachine", "DrinkMachine", "BuyPerfume"};
+        foreach (string x in listOfPosibleThinkingObjetcs)
+            Visibility.thinkingObjects.Add(x, Resources.Load("FindObjects/" + x) as GameObject);
+
+        TaskManager.tasks = new Dictionary<string, string[]>(){
+            {"Bench", new string[2]{"FindBench", "Action"}},
+            {"Bin", new string[2]{"FindBin", "Action"}},
+            {"TicketMachine", new string[2]{"FindTicketMachine", "Action"}},
+            {"DrinkMachine", new string[2]{"FindDrinkMachine", "Action"}},
+            {"BuyPerfume", new string[2]{"FindBuyPerfume", "Action"}},
+        };
+        
+
+        //lectura del json
+        //TextAsset jsonFile = Resources.Load("Agendas") as TextAsset;
+        //Debug.Log(jsonFile.text);
+        //TaskManager.agendas = JsonUtility.FromJson<Agenda[]>(jsonFile.text);
+
+        /*foreach (Agenda ag in TaskManager.agendas){
+            Debug.Log(ag.id);
+        }*/
+
         allObjectPositions = new Dictionary<string, Dictionary<string, Tuple<GameObject, Vector3, bool>>>();
 
         GameObject[] allGameObjects = FindObjectsOfType<GameObject>();

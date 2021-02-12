@@ -5,6 +5,11 @@ using UnityEngine;
 public class TaskManager : MonoBehaviour
 {
 
+    public static Dictionary<string, string[]> tasks;
+
+    //public static Agenda[] agendas;
+    public Agenda ag = null;
+
     public bool dynamicStateAdded = false; // pasar aixo a public
 
     public FSMstate sameState;
@@ -13,11 +18,6 @@ public class TaskManager : MonoBehaviour
     public FSMstate waitingState;
     public FSMdecision trueDecision;
     public bool instant = false;
-
-    public bool dynamicStateWait = true;
-    private FSMstate taskBin;
-
-    public FSMstate[] myTasks;
     
     private FSMcontroller controller;
     private FSMstate firstState;
@@ -46,22 +46,26 @@ public class TaskManager : MonoBehaviour
     }
 
     public void createTasks() {
-        int numTasks = myTasks.Length;
+        int numTasks = ag.tasks.Length;
         FSMstate actualState = null;
-        FSMstate lastState = idleState;
+        FSMstate originalState = Resources.Load("FindSomething") as FSMstate;
+        FSMstate lastState = originalState.Clone();
 
         for (int i = numTasks-1; i >= 0; i--) {
-            //FSMstate originalState = Resources.Load(myTasks[i]) as FSMstate; //myTasks[i] string nom estat
-            //actualState = originalState.Clone();
-            actualState = myTasks[i].Clone();
-            actualState.transitions = createTransactions(actualState.transitions, lastState, false);
-            lastState = actualState;
+            string[] aux = ag.tasks[i].Split('_');
+            for (int j = aux.Length-1; j >= 0; j--) {
+                originalState = Resources.Load(aux[j]) as FSMstate;
+                actualState = originalState.Clone();
+                actualState.transitions = createTransactions(actualState.transitions, lastState, false);
+                lastState = actualState;
+            }
         }
         firstState = actualState;
+
     }
 
     public FSMstate GetFirstTask() {
-        if (myTasks.Length > 0){
+        if (ag != null) {
             if (firstState == null)
                 createTasks();
             return firstState;
@@ -77,41 +81,68 @@ public class TaskManager : MonoBehaviour
             actualState = actualState.transitions[actualState.transitions.Length-1].destinationState;
         }
         FSM += "Idle";
-        Debug.Log("Estat de la FSM en aquest punt:");
+        Debug.Log("Estat de la FSM en aquest punt: " + name);
         Debug.Log(FSM);
     }
 
-    void Start() 
+    /*public void AddDynamicState(string lookingForType) {
+        FSMstate actualState = controller.activeState;
+        FSMstate[] vector = new FSMstate[3]{
+            actualState.transitions[actualState.transitions.Length-1].destinationState,
+            actualState.Clone(),
+            actualState.transitions[actualState.transitions.Length-1].destinationState.Clone()
+        };
+        actualState.name = "Find" + lookingForType;
+        FSMstate lastState = vector[vector.Length-1];
+        for (int i = vector.Length-2; i >= 0; i--) {
+            actualState = vector[i];
+            actualState.transitions = createTransactions(actualState.transitions, lastState, false);
+            lastState = actualState;
+        }
+
+        PrintFSM();
+    }*/
+
+    public void AddDynamicState(string lookingForType, string actuallyLookingForType) {
+        instant = true;
+        FSMstate actualState = controller.activeState;
+
+        List<FSMstate> newTransitions = new List<FSMstate>();
+        newTransitions.Add(actualState);
+        foreach (string x in tasks[lookingForType]) {
+            FSMstate newStates = Resources.Load(x) as FSMstate;
+            newTransitions.Add(newStates.Clone());
+        }
+        if (actuallyLookingForType == "") newTransitions.Add(actualState.Clone());
+        else {
+            for (int i = 0; i < tasks[actuallyLookingForType].Length; ++i) {
+                newTransitions.Add(actualState.Clone());
+                actualState = actualState.transitions[actualState.transitions.Length-1].destinationState;
+            }
+        }
+
+        FSMstate lastState = newTransitions[newTransitions.Count-1];
+        for (int i = newTransitions.Count-2; i >= 0; i--) {
+            actualState = newTransitions[i];
+            actualState.transitions = createTransactions(actualState.transitions, lastState, (i == 0));
+            lastState = actualState;
+        }
+
+        PrintFSM();
+    }
+
+    void Awake() 
     {
         controller = GetComponent<FSMcontroller>();
-        taskBin = Resources.Load("TaskBin") as FSMstate; 
+
+        TextAsset jsonFile = Resources.Load("Agendas/" + name) as TextAsset;
+        if (jsonFile != null)
+            ag = JsonUtility.FromJson<Agenda>(jsonFile.text);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("space")) {
-            Debug.Log("Space");
-            dynamicStateAdded = true;
-
-            FSMstate actualState = controller.activeState;
-            FSMstate nextState = actualState.transitions[actualState.transitions.Length-1].destinationState;
-            FSMstate newState;
-            if (dynamicStateWait) newState = waitingState.Clone();
-            else newState = taskBin.Clone();
-
-            if (instant) {
-                newState.name += " (dynamic+instant)";
-                FSMstate repeatState = actualState.Clone();
-                repeatState.transitions = createTransactions(actualState.transitions, nextState, false);
-                newState.transitions = createTransactions(newState.transitions, repeatState, false);
-                actualState.transitions = createTransactions(actualState.transitions, newState, instant);
-            }
-            else {
-                newState.name += " (dynamic)";
-                newState.transitions = createTransactions(newState.transitions, nextState, false);
-                actualState.transitions = createTransactions(actualState.transitions, newState, instant);
-            }
-
+        if (Input.GetKeyDown("p") && name == "Female11.1 (1)") {
             PrintFSM();
         }
     }

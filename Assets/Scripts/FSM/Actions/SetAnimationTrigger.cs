@@ -6,9 +6,15 @@ using UnityEngine;
 public class SetAnimationTrigger : FSMaction {
 
 	public string triggerName;
+	public string[] resetTriggers;
 
 	public override void Act(FSMcontroller controller) {
-		controller.GetComponent<Animator>().SetTrigger(triggerName);
+		Animator anim = controller.GetComponent<Animator>();
+
+		foreach (string x in resetTriggers)
+			anim.ResetTrigger(x);
+		
+		anim.SetTrigger(triggerName);
 	}
 
 }

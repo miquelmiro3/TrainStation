@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1486333243127157608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7102190046647562968}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7102190046647562968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486333243127157608}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.172, z: -0.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2975604244234793357}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &2975604242497538483
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +281,7 @@ GameObject:
   - component: {fileID: 4375624000261383636}
   - component: {fileID: 3351952468198635639}
   - component: {fileID: 1422262174804257273}
+  - component: {fileID: 2558620118588244678}
   m_Layer: 8
   m_Name: TicketMachine
   m_TagString: Untagged
@@ -272,6 +303,7 @@ Transform:
   - {fileID: 2975604243843816200}
   - {fileID: 2975604242497538482}
   - {fileID: 2975604243520009388}
+  - {fileID: 7102190046647562968}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -314,10 +346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight_material: {fileID: 2100000, guid: cb3ace375aea93349890113a3a746e56, type: 2}
-  ticket: {fileID: 248928563599443160, guid: f41d93a4c360a744c827f32653ede6a1, type: 3}
+  collectable: {fileID: 0}
   printing: 0
   lastTicket: {fileID: 0}
-  distanceForPersonInLine: 0
 --- !u!54 &3351952468198635639
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -398,3 +429,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
+--- !u!114 &2558620118588244678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975604244234793354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcb21a024aea6440bf4e884162262a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  booked: 0
+  pos: {x: 0, y: 0, z: 0}

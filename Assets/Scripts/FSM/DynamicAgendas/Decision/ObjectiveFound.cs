@@ -7,7 +7,7 @@ public class ObjectiveFound : FSMdecision {
 
 	public override bool Decide(FSMcontroller controller) {
 		NavMeshNavigator nmn = controller.GetComponent<NavMeshNavigator>();
-		return nmn.found;
+		return false;//nmn.found;
 	}
 
 }

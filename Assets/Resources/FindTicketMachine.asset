@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b414d63a905ba254fa5043935afd7143, type: 3}
+  m_Name: FindTicketMachine
+  m_EditorClassIdentifier: 
+  isStayState: 0
+  stayState: {fileID: 11400000, guid: 727d0bc6ab9e6f347b60b6ddbcc34e50, type: 2}
+  onEnterActions:
+  - {fileID: 11400000, guid: 2a82727c7032583479ede23baaf3ac72, type: 2}
+  - {fileID: 11400000, guid: 014631af1ea59a747a38ca0e31e049f2, type: 2}
+  - {fileID: 11400000, guid: cb57ed72a481e2a41aad89fa1415e8e5, type: 2}
+  - {fileID: 11400000, guid: c8ab75b26a64531479f59963f9ddcabd, type: 2}
+  - {fileID: 11400000, guid: 8471bb3515f876d4fadc34cb25d73f27, type: 2}
+  constantActions: []
+  onLeaveActions: []
+  transitions:
+  - {fileID: 11400000, guid: 50616d5892da9dc4e962ed657ad905e9, type: 2}
+  - {fileID: 11400000, guid: 42f63af5b42886e44ae81a8c5097438a, type: 2}
+  - {fileID: 11400000, guid: fa439fcae3772294f935d0036cc945cd, type: 2}

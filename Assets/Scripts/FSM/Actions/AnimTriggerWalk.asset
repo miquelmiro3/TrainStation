@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
   triggerName: Walk
+  resetTriggers:
+  - Idle
+  - LeftTurn
+  - RightTurn

@@ -27,13 +27,13 @@ public class NavMeshNavigator : MonoBehaviour
 	public bool agenda = false;
 	public bool destinationReached = false;
 	public bool countDown = false;
-	public bool working = false;
 	public bool moveTo = false;
-	public bool found = false;
+	//public bool found = false;
 	public float rotationSpeed = 1.5f;
 	public bool makeRotation = false;
 	public float yRotation = -1;
-	public Tuple<Vector3, Vector3, string> obj;
+	public Tuple<GameObject, Vector3, Vector3, string> obj;
+	public int queuePos = 0;
 	private bool turn = false;
 	private bool stuck = false;
 	private Animator animator;
@@ -44,8 +44,7 @@ public class NavMeshNavigator : MonoBehaviour
 	public delegate void FreeDestination(string type, string id); //TEMA EVENTS
 	public static event FreeDestination FreePosition;
 
-	public bool rotate; // DEBUG
-	public float walkSpeed;
+	public float walkSpeed; // DEBUG
 	public float rotSpeed;
 
 	public void ActivatePanicking() {
@@ -67,7 +66,7 @@ public class NavMeshNavigator : MonoBehaviour
 				stuckTimer=0;
 				stuckPosition=transform.position;
 				//Debug.Log("Stuck!!");
-				if (agenda && moveTo && !stuck) stuck = true;
+				if (agenda && moveTo) stuck = true;
 				GetOppositeDestination();
 			}
 			else stuckTimer+=Time.deltaTime;
@@ -99,52 +98,35 @@ public class NavMeshNavigator : MonoBehaviour
 		agent.SetDestination(transform.position-(transform.forward*3));
 	}
 
-	public void ObjectFound(Vector3 destination, Vector3 objective, string objectId) {
-		obj = new Tuple<Vector3, Vector3, string>(destination, objective, objectId);
-		found = true;
-
-		SetDestinationToObject();// NOMES DOS ESTATS
+	public void ObjectFound(GameObject objectFound, Vector3 dest, int qp, float rot) {
+		obj = new Tuple<GameObject, Vector3, Vector3, string>(objectFound, dest, objectFound.transform.position, objectFound.name);
+		yRotation = rot;
+		if (queuePos > qp) {
+			animator.ResetTrigger("Idle");
+			animator.SetTrigger("Walk");
+		}
+		queuePos = qp;
 	}
 
 	public void SetDestinationToObject() {
-		if (obj.Item1 == obj.Item2) {
-			Vector3 dir = (transform.position - obj.Item2).normalized;
-			Vector3 aux = obj.Item2 + dir * 0.1f;
-			obj = new Tuple<Vector3, Vector3, string>(aux, obj.Item2, obj.Item3);
-		}
-		agent.SetDestination(obj.Item1);
+		//found = true;
+		agent.SetDestination(obj.Item2);
 		moveTo = true;
-		makeRotation = true;
+		if (queuePos == 0) makeRotation = true;
 	}
-
-	/*public void GetDestinationFromObject(string objectType, string objectId) {
-		AssignPosition.Invoke(this, objectType, objectId);
-		found = true;
-	}
-
-	public void SetDestinationToObject(Vector3 dest, Vector3 obj, string objectId) {
-		Debug.Log(objectId);
-		Debug.Log(dest);
-		yRotation = -1;
-		SetDestination(dest);
-		id = objectId;
-		Debug.Log(agent.destination);
-	}*/
 
 	public void SetFreeObject() {
-		string type = obj.Item3.Split('_')[0];
-		FreePosition.Invoke(type, obj.Item3);
+		IndividualObjectManager iom = obj.Item1.GetComponent<IndividualObjectManager>();
+		if (iom) iom.SetFree();
 	}
 
 	public void Reset() {
 		agent.SetDestination(transform.position);
 		destinationReached = false;
-		working = false;
 		countDown = false;
 		moveTo = false;
-		found = false;
+		//found = false;
 		makeRotation = false;
-		yRotation = -1;
 		turn = false;
 		stuck = false;
 	}
@@ -152,9 +134,8 @@ public class NavMeshNavigator : MonoBehaviour
 	private bool Rotation() {
 		if (makeRotation && !stuck) {
 			if (yRotation == -1) {
-				Vector3 direction = (obj.Item2 - transform.position).normalized;
+				Vector3 direction = (obj.Item3 - transform.position).normalized;
 				yRotation = Quaternion.LookRotation(direction).eulerAngles.y;
-				Debug.Log(yRotation);
 			}
 			Vector3 or = transform.eulerAngles;
 			Vector3 to = new Vector3(0f, yRotation, 0f);
@@ -177,25 +158,24 @@ public class NavMeshNavigator : MonoBehaviour
 				}
 			}
 
-			if (!turn) {
-				if (rightTurn)	animator.SetTrigger("RightTurn");
-				else			animator.SetTrigger("LeftTurn");
-				turn = true;
-			}
-
-			bool rotationReached = Vector3.Distance(or, to) <= 1f;
-			if (!rotationReached)
+			if (Vector3.Distance(or, to) > 5f) {
 				transform.eulerAngles = Vector3.Lerp(or, to, rotationSpeed*Time.deltaTime);
+				if (!turn) {
+					if (rightTurn) animator.SetTrigger("RightTurn");
+					else animator.SetTrigger("LeftTurn");
+					turn = true;
+				}
+				return false;
+			}
 			else {
 				transform.eulerAngles = to;
 				turn = false;
 				makeRotation = false;
 				yRotation = -1;
+				return true;
 			}
-			return rotationReached;
 		}
-		else 
-			return true;
+		else return true;
 	}
 
     // Start is called before the first frame update
@@ -204,8 +184,8 @@ public class NavMeshNavigator : MonoBehaviour
 		agent=GetComponent<NavMeshAgent>();
 		destroyWhenOnDestination=false;
 		stuckTimer=0;
-		timeToConsiderStuck=0.5f;
-		stuckDistance=0.2f;
+		timeToConsiderStuck=0.5f;//0.5f
+		stuckDistance=0.2f;//0.2f
 		randomRadius=30f;
 		stuckPosition=transform.position;
 		panicking=false;
@@ -220,7 +200,7 @@ public class NavMeshNavigator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 		/*if (rotate) { //DEBUG
 			Rotation();
@@ -245,17 +225,25 @@ public class NavMeshNavigator : MonoBehaviour
 			}
 		}else if (!idle && !agent.pathPending) {
 			if (destroyWhenOnDestination&&agent.remainingDistance<=0.4) Destroy(gameObject);
-			else if (agent.remainingDistance<=0.2) {
+			else if (agent.enabled && agent.remainingDistance<=0.2) {
 				if (agenda) { // NEW
-					if (moveTo && agent.remainingDistance<=0) {
+					if (moveTo) {
 						if (Rotation()) {
-							if (stuck)
-								agent.SetDestination(obj.Item1);
-							else 
+							if (stuck) {
+								stuck = false;
+								agent.SetDestination(obj.Item2);
+							}
+							else if (queuePos == 0) {
 								destinationReached = true;
+								idle = true;
+							}
+							else {
+								animator.ResetTrigger("Walk");
+								animator.SetTrigger("Idle");
+							}
 						}
 					}
-					else if (!moveTo) {
+					else {
 						SetRandomDestination();
 					}
 				}
@@ -265,7 +253,8 @@ public class NavMeshNavigator : MonoBehaviour
 					}
 					else SetRandomDestination();
 				}
-			} else if (!panicking) CheckIfStuck();
+			}
+			else if (agent.enabled && !panicking) CheckIfStuck();
 		}
     }
 }
