@@ -52,7 +52,7 @@ public class TaskManager : MonoBehaviour
         FSMstate lastState = originalState.Clone();
 
         for (int i = numTasks-1; i >= 0; i--) {
-            string[] aux = ag.tasks[i].Split('_');
+            string[] aux = tasks[ag.tasks[i]];
             for (int j = aux.Length-1; j >= 0; j--) {
                 originalState = Resources.Load(aux[j]) as FSMstate;
                 actualState = originalState.Clone();

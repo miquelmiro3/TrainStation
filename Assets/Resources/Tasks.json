@@ -1,0 +1,9 @@
+{
+    "listOfTasks": [
+        "Bench:FindBench_ActionSit_ActionStandUp",
+        "Bin:FindBin_Action",
+        "TicketMachine:FindTicketMachine_Action",
+        "DrinkMachine:FindDrinkMachine_Action",
+        "BuyPerfume:FindBuyPerfume_Action"
+    ]
+}

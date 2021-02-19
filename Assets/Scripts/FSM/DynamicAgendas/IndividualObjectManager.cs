@@ -8,14 +8,14 @@ public class IndividualObjectManager : MonoBehaviour
 {
 
     public float rotation = -1;
-    public bool disableNMO = false;
+    public bool disableNMO = false; //BORRAR
     public bool enableQueue = false;
     public int maxQueueLength = 3;
 
-    public bool booked = false;
+    private bool booked = false;
     private Transform pos;
-    public NavMeshObstacle nmo;
-    public Queue<NavMeshNavigator> queue = new Queue<NavMeshNavigator>();
+    private NavMeshObstacle nmo;
+    private Queue<NavMeshNavigator> queue = new Queue<NavMeshNavigator>();
 
     public void SetFree() {
         booked = false;

@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class Visibility : MonoBehaviour
 {
-    public static Dictionary<string, GameObject> thinkingObjects = new Dictionary<string, GameObject>();
+    public static Dictionary<string, GameObject> thinkingObjects;
+    private bool showThinkingObject = true;
     private GameObject thinkingObject = null;
+
 
     public float viewDistance;
     public float viewAngle;
@@ -31,6 +33,7 @@ public class Visibility : MonoBehaviour
             Vector3 aux = transform.position;
             aux.y = 2.5f;
             thinkingObject = Instantiate(thinkingObjects[s], aux, transform.rotation);
+            thinkingObject.SetActive(showThinkingObject);
             thinkingObject.transform.parent = transform;
         }
     }
@@ -160,11 +163,19 @@ public class Visibility : MonoBehaviour
             }
         }
     }
-
+ 
     void Start() 
     {
         delay = 0.5f;// + UnityEngine.Random.Range(0.0f, 0.5f);
         StartCoroutine("FindVisibleObjects");
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown("t")) {
+            showThinkingObject = !showThinkingObject;
+            if (thinkingObject != null) thinkingObject.SetActive(showThinkingObject);
+        }
     }
 
 }

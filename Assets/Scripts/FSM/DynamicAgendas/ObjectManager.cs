@@ -91,27 +91,20 @@ public class ObjectManager : MonoBehaviour
     
     void Awake()
     {
-        string[] listOfPosibleThinkingObjetcs = new string[5]{"Bench", "Bin", "TicketMachine", "DrinkMachine", "BuyPerfume"};
-        foreach (string x in listOfPosibleThinkingObjetcs)
-            Visibility.thinkingObjects.Add(x, Resources.Load("FindObjects/" + x) as GameObject);
+        TextAsset jsonFile = Resources.Load("Tasks") as TextAsset;
+        TaskList taskList = JsonUtility.FromJson<TaskList>(jsonFile.text);
 
-        TaskManager.tasks = new Dictionary<string, string[]>(){
-            {"Bench", new string[2]{"FindBench", "Action"}},
-            {"Bin", new string[2]{"FindBin", "Action"}},
-            {"TicketMachine", new string[2]{"FindTicketMachine", "Action"}},
-            {"DrinkMachine", new string[2]{"FindDrinkMachine", "Action"}},
-            {"BuyPerfume", new string[2]{"FindBuyPerfume", "Action"}},
-        };
-        
+        TaskManager.tasks = new Dictionary<string, string[]>();
+        Visibility.thinkingObjects = new Dictionary<string, GameObject>();
+        foreach (string x in taskList.listOfTasks) {
+            string[] task = x.Split(':');
+            TaskManager.tasks.Add(task[0], task[1].Split('_'));
+            Visibility.thinkingObjects.Add(task[0], Resources.Load("FindObjects/" + task[0]) as GameObject);
+        }
 
-        //lectura del json
-        //TextAsset jsonFile = Resources.Load("Agendas") as TextAsset;
-        //Debug.Log(jsonFile.text);
-        //TaskManager.agendas = JsonUtility.FromJson<Agenda[]>(jsonFile.text);
 
-        /*foreach (Agenda ag in TaskManager.agendas){
-            Debug.Log(ag.id);
-        }*/
+
+
 
         allObjectPositions = new Dictionary<string, Dictionary<string, Tuple<GameObject, Vector3, bool>>>();
 

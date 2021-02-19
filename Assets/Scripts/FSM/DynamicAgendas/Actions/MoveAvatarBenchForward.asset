@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd5b345ca6ddf3242a04ca0dce29eb03, type: 3}
-  m_Name: AnimTriggerObject
+  m_Script: {fileID: 11500000, guid: f8fcca275a54b0f4e98dd396e7ddcdb4, type: 3}
+  m_Name: MoveAvatarBenchForward
   m_EditorClassIdentifier: 
   condition: {fileID: 0}
-  objects:
-  - Bench
-  animations:
-  - Sit
-  defaultAnimation: Idle
+  move: 0.6
+  speed: 0.55

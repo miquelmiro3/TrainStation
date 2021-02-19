@@ -38,6 +38,11 @@ public class NavMeshNavigator : MonoBehaviour
 	private bool stuck = false;
 	private Animator animator;
 
+	public bool moveAvatar = false;
+	public int moveAvatarDirection;
+	public Vector3 moveAvatarDest;
+	public float moveAvatarSpeed;//6f;
+
 	public delegate void AssignDestination(NavMeshNavigator nmn, string type, string id); //TEMA EVENTS
 	public static event AssignDestination AssignPosition;
 
@@ -205,6 +210,14 @@ public class NavMeshNavigator : MonoBehaviour
 		/*if (rotate) { //DEBUG
 			Rotation();
 		}*/
+		if (moveAvatar) {
+			moveAvatar = Vector3.Distance(transform.position, moveAvatarDest) >= 0.01;
+			if (moveAvatar)
+				transform.position = transform.position + transform.forward * moveAvatarDirection * moveAvatarSpeed*Time.deltaTime;
+				//transform.position = Vector3.Lerp(transform.position, moveAvatarDest, moveAvatarSpeed*Time.deltaTime);
+			else
+				transform.position = moveAvatarDest;
+		}
 
 		if(name == "Female11.1 (1)") { //DEBUG
 			if (Input.GetKey("w"))

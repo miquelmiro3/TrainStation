@@ -7,7 +7,7 @@ for x in female:
     text = "{\n"
     text += "\t\"id\": \"" + title + "\",\n"
     text += "\t\"tasks\": [\n"
-    text += "\t\t\"FindDrinkMachine_Action\"\n"
+    text += "\t\t\"DrinkMachine\"\n"
     text += "\t]\n"
     text += "}"
     f = open("Agendas/" + title + ".json", "w")
@@ -21,7 +21,7 @@ for x in male:
     text = "{\n"
     text += "\t\"id\": \"" + title + "\",\n"
     text += "\t\"tasks\": [\n"
-    text += "\t\t\"FindDrinkMachine_Action\"\n"
+    text += "\t\t\"DrinkMachine\"\n"
     text += "\t]\n"
     text += "}"
     f = open("Agendas/" + title + ".json", "w")
