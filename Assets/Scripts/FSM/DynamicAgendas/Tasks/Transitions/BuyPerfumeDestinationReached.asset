@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c5388d78daf70f469ad79415ab66013, type: 3}
-  m_Name: FreeDestinationAlways
+  m_Script: {fileID: 11500000, guid: dbe14cf8b75190a4894e522c69d4ce97, type: 3}
+  m_Name: BuyPerfumeDestinationReached
   m_EditorClassIdentifier: 
-  condition: {fileID: 0}
-  always: 1
+  decision: {fileID: 11400000, guid: 5f9a51bc28e7fc84b9304f71fc2b543d, type: 2}
+  destinationState: {fileID: 11400000, guid: 181b5b3f7aac56344a938bb2faa9a1b9, type: 2}

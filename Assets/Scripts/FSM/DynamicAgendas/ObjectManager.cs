@@ -94,11 +94,11 @@ public class ObjectManager : MonoBehaviour
         TextAsset jsonFile = Resources.Load("Tasks") as TextAsset;
         TaskList taskList = JsonUtility.FromJson<TaskList>(jsonFile.text);
 
-        TaskManager.tasks = new Dictionary<string, string[]>();
+        //TaskManager.tasks = new Dictionary<string, string[]>();
         Visibility.thinkingObjects = new Dictionary<string, GameObject>();
         foreach (string x in taskList.listOfTasks) {
             string[] task = x.Split(':');
-            TaskManager.tasks.Add(task[0], task[1].Split('_'));
+            //TaskManager.tasks.Add(task[0], task[1].Split('_'));
             Visibility.thinkingObjects.Add(task[0], Resources.Load("FindObjects/" + task[0]) as GameObject);
         }
 

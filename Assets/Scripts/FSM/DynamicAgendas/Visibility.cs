@@ -63,7 +63,7 @@ public class Visibility : MonoBehaviour
                         Tuple<Vector3, int, float> bookedObj = iom.Book(GetComponent<NavMeshNavigator>());
                         if (bookedObj != null) {
                             ObjectFound(false, obj, bookedObj.Item1, bookedObj.Item2, bookedObj.Item3);
-                            GetComponent<TaskManager>().AddDynamicState(obj.tag, lookingForType);
+                            GetComponent<TaskManager>().AddDynamicState(obj.tag);
                             break;
                         }
                     }
@@ -71,7 +71,7 @@ public class Visibility : MonoBehaviour
                         Vector3 dir = (transform.position - obj.transform.position).normalized;
                         Vector3 newDest = obj.transform.position + dir * 0.5f;
                         ObjectFound(false, obj, newDest, 0, -1);
-                        GetComponent<TaskManager>().AddDynamicState(obj.tag, lookingForType);
+                        GetComponent<TaskManager>().AddDynamicState(obj.tag);
                         break;
                     }
                 }

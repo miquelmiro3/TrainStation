@@ -49,7 +49,7 @@ public class FSMstate : ScriptableObject
 	public FSMstate CheckTransitions(FSMcontroller controller) {
 		foreach (FSMtransition transition in transitions) {
 			if (transition.decision.Decide(controller)) {
-				return transition.destinationState;
+				return transition.GetDestinationState(controller);
 			}
 		}
 		return stayState;

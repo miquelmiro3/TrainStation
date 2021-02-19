@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b414d63a905ba254fa5043935afd7143, type: 3}
-  m_Name: Action
+  m_Name: ActionStandUp
   m_EditorClassIdentifier: 
   isStayState: 0
   stayState: {fileID: 11400000, guid: 727d0bc6ab9e6f347b60b6ddbcc34e50, type: 2}
@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2424dfc3f5eaf8e49be614259669c08b, type: 2}
   - {fileID: 11400000, guid: 102f382e5acd40542a7b73c31c14da73, type: 2}
   - {fileID: 11400000, guid: c4b7ef9890e8c5748bcc0ef37591622a, type: 2}
+  - {fileID: 11400000, guid: edcbf2bbb2eba08449a62959ae948986, type: 2}
   - {fileID: 11400000, guid: 6cdbfac2b7c4f5545b624c1a33355ff1, type: 2}
   constantActions: []
   onLeaveActions:
@@ -25,4 +26,4 @@ MonoBehaviour:
   transitions:
   - {fileID: 11400000, guid: 50616d5892da9dc4e962ed657ad905e9, type: 2}
   - {fileID: 11400000, guid: 42f63af5b42886e44ae81a8c5097438a, type: 2}
-  - {fileID: 11400000, guid: 8a995d1f007d66c448e7a26a9c323ee5, type: 2}
+  - {fileID: 11400000, guid: ca099816d2866b94e87f99d4246345e8, type: 2}
