@@ -6,9 +6,6 @@ using UnityEngine;
 public class SetDestinationForObjective : FSMaction
 {
 	public override void Act(FSMcontroller controller) {
-		TaskManager tm = controller.GetComponent<TaskManager>();
-		if (tm.instant) controller.GetComponent<NavMeshNavigator>().SetDestinationToObject();
-		else controller.GetComponent<NavMeshNavigator>().SetRandomDestination();
-		tm.instant = false;
+		controller.GetComponent<NavMeshNavigator>().SetDestinationToObject();
 	}
 }

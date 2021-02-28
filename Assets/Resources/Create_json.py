@@ -7,7 +7,7 @@ for x in female:
     text = "{\n"
     text += "\t\"id\": \"" + title + "\",\n"
     text += "\t\"tasks\": [\n"
-    text += "\t\t\"DrinkMachine\"\n"
+    text += "\t\t\"Information\"\n"
     text += "\t]\n"
     text += "}"
     f = open("Agendas/" + title + ".json", "w")

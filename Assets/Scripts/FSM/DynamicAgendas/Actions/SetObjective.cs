@@ -11,20 +11,14 @@ public class SetObjective : FSMaction {
 
 	public override void Act(FSMcontroller controller) {
 		Visibility v = controller.GetComponent<Visibility>();
-		if (controller.GetComponent<TaskManager>().instant) {
-			v.allowDynamicStates = false;
-			v.lookingForType = "";
+		if (setSpecificObject) {
+			v.lookingForType = typeOfObject;
+			v.setThinkingObject(typeOfObject);
 		}
 		else {
-			if (setSpecificObject) {
-				v.lookingForType = typeOfObject;
-				v.setThinkingObject(typeOfObject);
-			}
-			else {
-				v.lookingForType = "";
-				v.setThinkingObject("");
-			}
-			v.allowDynamicStates = allowDynamicStates;
+			v.lookingForType = "";
+			v.setThinkingObject("");
 		}
+		v.allowDynamicStates = allowDynamicStates;
 	}
 }

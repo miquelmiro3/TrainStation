@@ -28,7 +28,7 @@ public class NavMeshNavigator : MonoBehaviour
 	public bool destinationReached = false;
 	public bool countDown = false;
 	public bool moveTo = false;
-	//public bool found = false;
+	public bool found = false;
 	public float rotationSpeed = 1.5f;
 	public bool makeRotation = false;
 	public float yRotation = -1;
@@ -41,13 +41,8 @@ public class NavMeshNavigator : MonoBehaviour
 	public bool moveAvatar = false;
 	public int moveAvatarDirection;
 	public Vector3 moveAvatarDest;
-	public float moveAvatarSpeed;//6f;
-
-	public delegate void AssignDestination(NavMeshNavigator nmn, string type, string id); //TEMA EVENTS
-	public static event AssignDestination AssignPosition;
-
-	public delegate void FreeDestination(string type, string id); //TEMA EVENTS
-	public static event FreeDestination FreePosition;
+	public float moveAvatarSpeed;
+	public float moveAvatarDistance = -1f;
 
 	public float walkSpeed; // DEBUG
 	public float rotSpeed;
@@ -111,10 +106,10 @@ public class NavMeshNavigator : MonoBehaviour
 			animator.SetTrigger("Walk");
 		}
 		queuePos = qp;
+		found = true;
 	}
 
 	public void SetDestinationToObject() {
-		//found = true;
 		agent.SetDestination(obj.Item2);
 		moveTo = true;
 		if (queuePos == 0) makeRotation = true;
@@ -126,14 +121,14 @@ public class NavMeshNavigator : MonoBehaviour
 	}
 
 	public void Reset() {
-		agent.SetDestination(transform.position);
+		//agent.SetDestination(transform.position);
 		destinationReached = false;
 		countDown = false;
 		moveTo = false;
-		//found = false;
 		makeRotation = false;
 		turn = false;
 		stuck = false;
+		found = false;
 	}
 
 	private bool Rotation() {
@@ -142,6 +137,8 @@ public class NavMeshNavigator : MonoBehaviour
 				Vector3 direction = (obj.Item3 - transform.position).normalized;
 				yRotation = Quaternion.LookRotation(direction).eulerAngles.y;
 			}
+			else if (yRotation == -2) return true;
+
 			Vector3 or = transform.eulerAngles;
 			Vector3 to = new Vector3(0f, yRotation, 0f);
 					
@@ -163,7 +160,7 @@ public class NavMeshNavigator : MonoBehaviour
 				}
 			}
 
-			if (Vector3.Distance(or, to) > 5f) {
+			if (Vector3.Distance(or, to) > 10f) {
 				transform.eulerAngles = Vector3.Lerp(or, to, rotationSpeed*Time.deltaTime);
 				if (!turn) {
 					if (rightTurn) animator.SetTrigger("RightTurn");
@@ -180,7 +177,26 @@ public class NavMeshNavigator : MonoBehaviour
 				return true;
 			}
 		}
-		else return true;
+		return true;
+	}
+
+	private void MoveAvatar() {
+		if (moveAvatar) {
+			float remainingDistance = Vector3.Distance(transform.position, moveAvatarDest);
+			if (moveAvatarDistance == -1f || remainingDistance < moveAvatarDistance) 
+				moveAvatar = remainingDistance >= 0.01;
+			else moveAvatar = false;
+
+			if (moveAvatar) {
+				transform.position = transform.position + transform.forward * moveAvatarDirection * moveAvatarSpeed*Time.deltaTime;
+				//transform.position = Vector3.Lerp(transform.position, moveAvatarDest, moveAvatarSpeed*Time.deltaTime);
+				moveAvatarDistance = remainingDistance;
+			}
+			else {
+				transform.position = moveAvatarDest;
+				moveAvatarDistance = -1f;
+			}
+		}
 	}
 
     // Start is called before the first frame update
@@ -210,15 +226,6 @@ public class NavMeshNavigator : MonoBehaviour
 		/*if (rotate) { //DEBUG
 			Rotation();
 		}*/
-		if (moveAvatar) {
-			moveAvatar = Vector3.Distance(transform.position, moveAvatarDest) >= 0.01;
-			if (moveAvatar)
-				transform.position = transform.position + transform.forward * moveAvatarDirection * moveAvatarSpeed*Time.deltaTime;
-				//transform.position = Vector3.Lerp(transform.position, moveAvatarDest, moveAvatarSpeed*Time.deltaTime);
-			else
-				transform.position = moveAvatarDest;
-		}
-
 		if(name == "Female11.1 (1)") { //DEBUG
 			if (Input.GetKey("w"))
 				transform.position += transform.forward * walkSpeed * Time.deltaTime;
@@ -229,6 +236,8 @@ public class NavMeshNavigator : MonoBehaviour
 			if (Input.GetKey("d"))
 				transform.eulerAngles += new Vector3(0.0f, 10 * rotSpeed * Time.deltaTime, 0.0f);
 		}
+
+		MoveAvatar();
 
 		if (idle && !alwaysIdle) {
 			idleTimer+=Time.deltaTime;
@@ -256,14 +265,10 @@ public class NavMeshNavigator : MonoBehaviour
 							}
 						}
 					}
-					else {
-						SetRandomDestination();
-					}
+					else SetRandomDestination();
 				}
 				else {
-					if (UnityEngine.Random.Range(0, 100)<idleChance) {
-						idle=true;
-					}
+					if (UnityEngine.Random.Range(0, 100)<idleChance) idle=true;
 					else SetRandomDestination();
 				}
 			}

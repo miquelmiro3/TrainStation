@@ -29,7 +29,7 @@ public class IndividualObjectManager : MonoBehaviour
                 ++i;
             }
         }
-        if (nmo) Invoke("EnableNMO", 1.0f);
+        if (nmo) Invoke("EnableNMO", 1.5f);
     }
 
     private void EnableNMO() {

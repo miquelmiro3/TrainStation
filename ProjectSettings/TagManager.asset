@@ -9,6 +9,9 @@ TagManager:
   - Bin
   - Bench
   - BuyPerfume
+  - Information
+  - ChargePhone
+  - BuyBook
   layers:
   - Default
   - TransparentFX

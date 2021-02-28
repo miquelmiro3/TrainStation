@@ -5,14 +5,22 @@ using UnityEngine;
 public class TaskManager : MonoBehaviour
 {
 
+    public static Dictionary<string, FSMstate> tasks;
+
     public FSMstate actualState = null;
     public FSMstate dynamicState = null;
-    public Agenda ag = null;
-    public Queue<FSMstate> queue = new Queue<FSMstate>();
+    public Agenda agenda = null;
+    public Queue<FSMstate> queueStates = new Queue<FSMstate>();
 
     public bool instant = false;
 
-    private FSMcontroller controller;
+    public bool IsDynamicState() {
+        if (instant) {
+            instant = false;
+            return true;
+        }
+        return false;
+    }
 
     public FSMstate GetNextState() {
         if (instant) return dynamicState;
@@ -20,25 +28,26 @@ public class TaskManager : MonoBehaviour
             dynamicState = null;
             return actualState;
         }
-        if (queue.Count > 0) {
-            actualState = queue.Dequeue();
+        if (queueStates.Count > 0) {
+            actualState = queueStates.Dequeue();
             return actualState;
         }
         return null;
     }
 
     public void AddDynamicState(string lookingForType) {
-        dynamicState = Resources.Load("Find" + lookingForType) as FSMstate;
+        //dynamicState = Resources.Load("Tasks/" + lookingForType) as FSMstate;
+        dynamicState = tasks[lookingForType];
 
         instant = true;
-        PrintFSM();
+        //PrintFSM();
     }
 
     public void PrintFSM() {
         string FSM = "";
         if (dynamicState != null) FSM += dynamicState.name + " -> ";
         FSM += actualState.name + " -> ";
-        foreach (FSMstate aux in queue)
+        foreach (FSMstate aux in queueStates)
             FSM += aux.name + " -> ";
         FSM += "FindSomething";
 
@@ -47,19 +56,26 @@ public class TaskManager : MonoBehaviour
     }
 
     public void createTasks() {
-        int numTasks = ag.tasks.Length;
+        int numTasks = agenda.tasks.Length;
 
         for (int i = 0; i < numTasks; i++) {
-            FSMstate aux = Resources.Load("Find" + ag.tasks[i]) as FSMstate;
-            queue.Enqueue(aux);
+            //FSMstate aux = Resources.Load("Tasks/" + agenda.tasks[i]) as FSMstate;
+            //queueStates.Enqueue(aux);
+            queueStates.Enqueue(tasks[agenda.tasks[i]]);
         }
-        actualState = queue.Dequeue();
+
+        if (queueStates.Count <= 0) {
+            FSMstate aux = Resources.Load("Tasks/FindSomething") as FSMstate;
+            actualState = aux;
+        }
+        else {
+            actualState = queueStates.Dequeue();
+        }
     }
 
     public FSMstate GetFirstTask() {
-        if (ag != null) {
-            if (actualState == null)
-                createTasks();
+        if (agenda != null) {
+            if (actualState == null) createTasks();
             return actualState;
         }
         return null;
@@ -67,11 +83,9 @@ public class TaskManager : MonoBehaviour
 
     void Awake() 
     {
-        controller = GetComponent<FSMcontroller>();
-
         TextAsset jsonFile = Resources.Load("Agendas/" + name) as TextAsset;
         if (jsonFile != null)
-            ag = JsonUtility.FromJson<Agenda>(jsonFile.text);
+            agenda = JsonUtility.FromJson<Agenda>(jsonFile.text);
     }
 
     void Update()
